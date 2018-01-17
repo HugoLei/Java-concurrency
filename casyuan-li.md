@@ -76,3 +76,9 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `}`
 
+# 为什么使用CAS
+
+现代CPU都能保证CAS操作是原子的，因此可以用CAS操作来保证线程安全。
+
+这样在并发情况下可以减少人工的并发控制操作。
+
