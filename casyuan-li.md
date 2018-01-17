@@ -46,37 +46,37 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `/**`
 
-`     * Atomically increments by one the current value.`
+`* Atomically increments by one the current value.`
 
-`     *`
+`*`
 
-`     * @return the previous value`
+`* @return the previous value`
 
-`     */`
+`*/`
 
-`    public final int getAndIncrement() {`
+`public final int getAndIncrement() {`
 
-`        return unsafe.getAndAddInt(this, valueOffset, 1);`
+`return unsafe.getAndAddInt(this, valueOffset, 1);`
 
-`    }`
+`}`
 
 > unsafe.getAndAddInt\(\)
 
 该方法先获取内存中对应的值，再执行CAS操作，如果操作成功，会返回更新前的旧值。
 
-同时为了保证操作一定能成功，需要将CAS操作放在循环里。
+**同时为了保证操作一定能成功，需要将CAS操作放在循环里。**
 
 `public final int getAndAddInt(Object arg0, long arg1, int arg3) {`
 
-`		int arg4;`
+`int arg4;`
 
-`		do {`
+`do {`
 
-`			arg4 = this.getIntVolatile(arg0, arg1);`
+`arg4 = this.getIntVolatile(arg0, arg1);`
 
-`		} while (!this.compareAndSwapInt(arg0, arg1, arg4, arg4 + arg3));`
+`} while (!this.compareAndSwapInt(arg0, arg1, arg4, arg4 + arg3));`
 
-`		return arg4;`
+`return arg4;`
 
-`	}`
+`}`
 
