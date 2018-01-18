@@ -56,7 +56,9 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `}`
 
-> unsafe.getAndAddInt\(\)
+# 关于Unsafe
+
+`unsafe.getAndAddInt()`
 
 该方法先获取内存中对应的值，再执行CAS操作，如果操作成功，会返回更新前的旧值。
 
