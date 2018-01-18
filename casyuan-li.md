@@ -64,19 +64,19 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 **同时为了保证操作一定能成功，需要将CAS操作放在循环里。**
 
-`public final int getAndAddInt(Object arg0, long arg1, int arg3) {`
+    `public final int getAndAddInt(Object arg0, long arg1, int arg3) {`
 
-`int arg4;`
+    `int arg4;`
 
-`do {`
+    `do {`
 
-`arg4 = this.getIntVolatile(arg0, arg1);`
+    `arg4 = this.getIntVolatile(arg0, arg1);`
 
-`} while (!this.compareAndSwapInt(arg0, arg1, arg4, arg4 + arg3));`
+    `} while (!this.compareAndSwapInt(arg0, arg1, arg4, arg4 + arg3));`
 
-`return arg4;`
+    `return arg4;`
 
-`}`
+    `}`
 
 > 底层调用native方法
 
