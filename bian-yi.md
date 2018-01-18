@@ -4,12 +4,15 @@
 
 ```
 public class Common {
-	private Integer age = 3;
-	private static Integer money = 4;
+    private Integer age = 3;
+    private static Integer money = 4;
 }
 ```
 
 反编译javap -c -private Common.class
+
+* 普通成员变量的赋值操作，被包含在无参构造函数中
+* 静态成员的赋值操作，被包含在static block中
 
 ```
 Compiled from "Common.java"
