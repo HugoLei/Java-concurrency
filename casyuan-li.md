@@ -96,19 +96,19 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `private static final long valueOffset;`
 
-`    static {`
+`static {`
 
-`        try {`
+`try {`
 
-`            valueOffset = unsafe.objectFieldOffset`
+`valueOffset = unsafe.objectFieldOffset`
 
-`                (AtomicInteger.class.getDeclaredField("value"));`
+`(AtomicInteger.class.getDeclaredField("value"));`
 
-`        } catch (Exception ex) { throw new Error(ex); }`
+`} catch (Exception ex) { throw new Error(ex); }`
 
-`    }`
+`}`
 
-为什么使用CAS
+# 为什么使用CAS
 
 现代CPU都能保证CAS操作是原子的，因此可以用CAS操作来保证线程安全。
 
