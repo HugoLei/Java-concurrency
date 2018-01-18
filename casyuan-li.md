@@ -1,4 +1,4 @@
-# CAS（Compare and Swap）
+#                         CAS（Compare and Swap）
 
 中文含义是：比较并交换
 
@@ -30,7 +30,7 @@ CAS操作的意思是，先比较内存中的值与预期的旧值是否相同�
 
 `public final boolean compareAndSet(int expect, int update) {`
 
-`return unsafe.compareAndSwapInt(this, valueOffset, expect, update); `
+`return unsafe.compareAndSwapInt(this, valueOffset, expect, update);`
 
 `}`
 
