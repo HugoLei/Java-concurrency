@@ -34,19 +34,16 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 > getAndIncrement\(\)
 
-`/**`
-
-`* Atomically increments by one the current value.`
-
-`* @return the previous value`
-
-`*/`
-
-`public final int getAndIncrement() {`
-
-`return unsafe.getAndAddInt(this, valueOffset, 1);`
-
-`}`
+```
+/
+**
+* Atomically increments by one the current value.
+* @return the previous value
+*/
+public final int getAndIncrement() {
+    return unsafe.getAndAddInt(this, valueOffset, 1);
+}
+```
 
 # 初探Unsafe
 
