@@ -51,7 +51,7 @@ public final int getAndIncrement() {
 
 该方法先获取内存中对应的值，再执行CAS操作，如果操作成功，会返回更新前的旧值。
 
-**同时为了保证操作一定能成功，需要将CAS操作放在循环里。**
+**同时为了保证操作一定能成功，需要将CAS操作放在循环里，并且需要volatile特性配合每次读到的都是最新值。**
 
 ```
 public final int getAndAddInt(Object arg0, long arg1, int arg3) {
