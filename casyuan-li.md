@@ -12,15 +12,15 @@ CAS操作的意思是，先比较内存中的值与预期的旧值是否相同�
 
 > compareAndSet\(\)
 
-`/**`
+    `/**`
 
-`* Atomically sets the value to the given updated value`
+    `* Atomically sets the value to the given updated value`
 
-`* if the current value {@code ==} the expected value.`
+     `* if the current value {@code ==} the expected value.`
 
-`* @param expect the expected value`
+    `* @param expect the expected value`
 
-`* @param update the new value`
+    `* @param update the new value`
 
 `* @return {@code true} if successful. False return indicates that`
 
