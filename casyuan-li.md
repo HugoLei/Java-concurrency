@@ -22,7 +22,7 @@ CAS操作的意思是，先比较内存中的值与预期的旧值是否相同�
 
     `* @param update the new value`
 
-`* @return {@code true} if successful. False return indicates that`
+                     `* @return {@code true} if successful. False return indicates that`
 
 `* the actual value was not equal to the expected value.`
 
@@ -30,7 +30,7 @@ CAS操作的意思是，先比较内存中的值与预期的旧值是否相同�
 
 `public final boolean compareAndSet(int expect, int update) {`
 
-`return unsafe.compareAndSwapInt(this, valueOffset, expect, update);`
+`return unsafe.compareAndSwapInt(this, valueOffset, expect, update); `
 
 `}`
 
