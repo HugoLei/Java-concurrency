@@ -21,13 +21,10 @@ CAS操作的意思是，先比较内存中的值与预期的旧值是否相同�
 * @return {@code true} if successful. False return indicates that
 * the actual value was not equal to the expected value.
 */
+public final boolean compareAndSet(int expect, int update) {
+    return unsafe.compareAndSwapInt(this, valueOffset, expect, update);
+}
 ```
-
-`public final boolean compareAndSet(int expect, int update) {`
-
-`return unsafe.compareAndSwapInt(this, valueOffset, expect, update);`
-
-`}`
 
 其中`private static final Unsafe unsafe = Unsafe.getUnsafe();`
 
