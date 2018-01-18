@@ -80,9 +80,9 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 > 底层调用native方法
 
-`public native int getIntVolatile(Object arg0, long arg1);`
+    `public native int getIntVolatile(Object arg0, long arg1);`
 
-`public final native boolean compareAndSwapInt(Object arg0, long arg1, int arg3, int arg4);`
+    `public final native boolean compareAndSwapInt(Object arg0, long arg1, int arg3, int arg4);`
 
 > 关于参数
 
