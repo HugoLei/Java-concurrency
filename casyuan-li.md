@@ -92,11 +92,11 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 关于offset，在AtomicInteger里有如下代码
 
-`private volatile int value;`
+    `private volatile int value;`
 
-`private static final long valueOffset;`
+    `private static final long valueOffset;`
 
-`static {`
+    `static {`
 
     `try {`
 
@@ -106,7 +106,7 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
     `} catch (Exception ex) { throw new Error(ex); }`
 
-`}`
+    `}`
 
 # 为什么使用CAS
 
