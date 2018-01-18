@@ -98,13 +98,13 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `static {`
 
-`try {`
+    `try {`
 
-`valueOffset = unsafe.objectFieldOffset`
+        `valueOffset = unsafe.objectFieldOffset`
 
-`(AtomicInteger.class.getDeclaredField("value"));`
+       `(AtomicInteger.class.getDeclaredField("value"));`
 
-`} catch (Exception ex) { throw new Error(ex); }`
+    `} catch (Exception ex) { throw new Error(ex); }`
 
 `}`
 
