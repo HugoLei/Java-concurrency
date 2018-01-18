@@ -78,21 +78,16 @@ public final native boolean compareAndSwapInt(Object arg0, long arg1, int arg3, 
 
 关于offset，在AtomicInteger里有如下代码
 
-    `private volatile int value;`
-
-    `private static final long valueOffset;`
-
-    `static {`
-
-        `try {`
-
-            `valueOffset = unsafe.objectFieldOffset`
-
-           `(AtomicInteger.class.getDeclaredField("value"));`
-
-        `} catch (Exception ex) { throw new Error(ex); }`
-
-    `}`
+```
+private volatile int value;
+private static final long valueOffset;
+static {
+    try {
+        valueOffset = unsafe.objectFieldOffset
+       (AtomicInteger.class.getDeclaredField("value"));
+    } catch (Exception ex) { throw new Error(ex); }
+}
+```
 
 # 为什么使用CAS
 
