@@ -56,9 +56,9 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 
 `}`
 
-# 关于Unsafe
+# 初探Unsafe
 
-`unsafe.getAndAddInt()`
+> `unsafe.getAndAddInt()`
 
 该方法先获取内存中对应的值，再执行CAS操作，如果操作成功，会返回更新前的旧值。
 
@@ -77,6 +77,18 @@ AtomicInteger的`compareAndSet()`使用了`unsafe`的`compareAndSwapInt()`方法
 `return arg4;`
 
 `}`
+
+> native方法
+
+public native int getIntVolatile\(Object arg0, long arg1\);
+
+public final native boolean compareAndSwapInt\(Object arg0, long arg1, int arg3, int arg4\);
+
+> 关于参数
+
+以方法`getIntVolatile`为例，`Object arg0`表示的是实例对象的地址，`long arg1`表示的是在该对象内的offset。
+
+这个方法就是找到实例对象在内存中的起始地址，并通过`offset`定位到要读取的值，同时方法名称`getIntVolatile`表明是要读取一个4byte 的int。
 
 # 为什么使用CAS
 
