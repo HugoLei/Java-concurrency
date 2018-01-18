@@ -83,8 +83,8 @@ private volatile int value;
 private static final long valueOffset;
 static {
     try {
-        valueOffset = unsafe.objectFieldOffset
-       (AtomicInteger.class.getDeclaredField("value"));
+        // valueOffset记录的就是value字段在AtomicInteger实例对象中的offset
+        valueOffset = unsafe.objectFieldOffset(AtomicInteger.class.getDeclaredField("value"));
     } catch (Exception ex) { throw new Error(ex); }
 }
 ```
