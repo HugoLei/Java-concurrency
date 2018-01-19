@@ -6,7 +6,32 @@
 
 若类包含static成员变量，或者static{}代码块，则编译器自动生成clinit\(\)方法。
 
+```
+// 源代码
+public class Common {
+    private static Integer age = 3;
+}
 
+```
+
+```
+public class testjava.loadclass.Common {
+  private static java.lang.Integer age;
+
+  static {};
+    Code:
+       0: iconst_3
+       1: invokestatic  #10                 // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       4: putstatic     #16                 // Field age:Ljava/lang/Integer;
+       7: return
+
+  public testjava.loadclass.Common();
+    Code:
+       0: aload_0
+       1: invokespecial #21                 // Method java/lang/Object."<init>":()V
+       4: return
+}
+```
 
 # &lt;init&gt;
 
