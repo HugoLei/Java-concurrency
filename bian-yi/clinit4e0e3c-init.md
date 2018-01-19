@@ -11,8 +11,13 @@
 public class Common {
     private static Integer age = 3;
 }
-
 ```
+
+class文件
+
+* 编译器自动添加了无参构造函数
+* 编译器自动添加了static{}代码块
+* 在static{}中调用了
 
 ```
 public class testjava.loadclass.Common {
