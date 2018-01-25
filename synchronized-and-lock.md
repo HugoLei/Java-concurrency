@@ -22,7 +22,21 @@ Lock接口提供了锁功能。
 
 # AbstractQueuedSynchronized
 
+提供了
 
+* FIFO队列来维护等待线程
+* 状态访问/修改方法
+
+Lock + AbstractQueuedSynchronized
+
+* Lock对锁的使用者提供公共接口
+* AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
+
+AbstractQueuedSynchronized三大类模板方法：
+
+* 独占式获取与释放同步状态
+* 共享式获取与释放同步状态
+* 查询同步队列中的等待线程情况
 
 
 
