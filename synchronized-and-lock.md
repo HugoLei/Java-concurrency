@@ -38,5 +38,7 @@ AbstractQueuedSynchronized三大类模板方法
 * 共享式获取与释放同步状态
 * 查询同步队列中的等待线程情况
 
+# 同步队列
+
 
 
