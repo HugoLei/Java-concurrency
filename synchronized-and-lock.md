@@ -32,7 +32,7 @@ Lock + AbstractQueuedSynchronized
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
-AbstractQueuedSynchronized三大类模板方法：
+AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
 * 共享式获取与释放同步状态
