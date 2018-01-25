@@ -13,5 +13,16 @@ Lock接口提供了锁功能。
 
 # 如何实现一个Lock
 
+* 需要一个队列来维护等待线程
+* 需要同步访问锁的状态
+
+是不是看着很麻烦？
+
+所以Java并发包提供了队列同步器AbstractQueuedSynchronized来支持锁的开发。
+
+# AbstractQueuedSynchronized
+
+
+
 
 
