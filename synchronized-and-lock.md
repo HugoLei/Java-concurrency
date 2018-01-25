@@ -20,7 +20,7 @@ Lock接口提供了锁功能。
 
 所以Java并发包提供了队列同步器AbstractQueuedSynchronized来支持锁的开发。
 
-# AbstractQueuedSynchronized
+# 同步器AbstractQueuedSynchronized
 
 提供了
 
@@ -39,6 +39,16 @@ AbstractQueuedSynchronized三大类模板方法
 * 查询同步队列中的等待线程情况
 
 # 同步队列
+
+一个FIFO双向队列。
+
+为什么是双向的，后面介绍。
+
+同步器拥有同步队列的头节点和伟节点，head和tail，这样就可以完成唤醒头部节点，将新的等待线程加入尾部。
+
+> 同步队列图片，《Java并发编程的艺术》
+
+
 
 
 
