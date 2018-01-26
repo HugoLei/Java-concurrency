@@ -85,5 +85,10 @@ AbstractQueuedSynchronized三大类模板方法
 
 ### 超时·独占式·同步状态获取与释放
 
+1. 在自旋阻塞过程中，若获取锁成功，返回
+2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
+3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不短缩小）
+4. 如果线程被interrupt，抛出中断异常
+
 
 
