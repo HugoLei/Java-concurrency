@@ -32,11 +32,28 @@ Lock + AbstractQueuedSynchronized
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
+AbstractQueuedSynchronized状态访问与更新
+
+> 状态代表的是：共享的资源
+
+* getState\(\)
+* setState\(int newState\)
+* compareAndSetState\(int expect, int update\)
+
 AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
+  * acquire\(int arg\)
+  * acquireInterruptibly\(int arg\)
+  * tryAcquireNanos\(int arg, long nanos\)
+  * release\(int arg\)
 * 共享式获取与释放同步状态
+  * acquireShared\(int arg\)
+  * acquireSharedInterruptibly\(int arg\)
+  * tryAcquireSharedNanos\(int arg, long nanos\)
+  * releaseShared\(int arg\)
 * 查询同步队列中的等待线程情况
+  * Collection&lt;Thread&gt; getQueuedThreads\(\)
 
 # 同步队列
 
@@ -71,6 +88,8 @@ AbstractQueuedSynchronized三大类模板方法
 4. 在自旋阻塞过程中尝试获取锁（判断前节点是否是head，是head并且获取到锁，把自身设置为head）
 5. 释放锁，唤醒首节点的后继节点（通过LockSupport）
 
+> 图片
+
 ### 共享式·同步状态获取与释放
 
 > 其实是共享与互斥同在
@@ -89,6 +108,8 @@ AbstractQueuedSynchronized三大类模板方法
 2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
 3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不短缩小）
 4. 如果线程被interrupt，抛出中断异常
+
+> 图片
 
 
 
