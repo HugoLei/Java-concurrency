@@ -40,6 +40,14 @@ AbstractQueuedSynchronized状态访问与更新
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\)
 
+AbstractQueuedSynchronized可重写的方法
+
+* protected boolean tryAcquire\(int arg\) 独占式获取锁
+* protected boolean tryRelease\(int arg\) 独占式释放锁
+* protected int tryAcquireShared\(int arg\) 共享式获取锁，&gt;=0表示获取成功
+* protected boolean tryReleaseShared\(int arg\) 共享式释放锁
+* protected boolean isHeldExclusively\(\) 是否被当前线程独占
+
 AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
@@ -102,11 +110,11 @@ AbstractQueuedSynchronized三大类模板方法
 
 共享式中获取锁的方法，返回值&gt;=0表示获取到锁
 
-### 超时·独占式·同步状态获取与释放
+### 超时·可中断·独占式·同步状态获取与释放
 
 1. 在自旋阻塞过程中，若获取锁成功，返回
 2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
-3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不短缩小）
+3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不断缩小）
 4. 如果线程被interrupt，抛出中断异常
 
 > 图片
