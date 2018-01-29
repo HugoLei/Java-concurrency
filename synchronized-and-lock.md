@@ -131,5 +131,7 @@ Lock接口提供了锁功能。
 * 重写tryAcquireShared\(int arg\)方法
 * state变化：合法值为0，1，2，初始为2，当一个线程获取，status减1，当线程释放，status+1
 
+# 重入锁
+
 
 
