@@ -27,12 +27,12 @@ Lock接口提供了锁功能。
 * FIFO队列来维护等待线程
 * 状态访问/修改方法
 
-Lock + AbstractQueuedSynchronized
+### Lock + AbstractQueuedSynchronized
 
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
-AbstractQueuedSynchronized状态访问与更新
+### AbstractQueuedSynchronized状态访问与更新
 
 > 状态代表的是：共享的资源
 
@@ -40,7 +40,7 @@ AbstractQueuedSynchronized状态访问与更新
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\)
 
-AbstractQueuedSynchronized三大类模板方法
+### AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
   * acquire\(int arg\)
@@ -55,7 +55,7 @@ AbstractQueuedSynchronized三大类模板方法
 * 查询同步队列中的等待线程情况
   * Collection&lt;Thread&gt; getQueuedThreads\(\)
 
-AbstractQueuedSynchronized可重写的方法
+### AbstractQueuedSynchronized可重写的方法
 
 * protected boolean tryAcquire\(int arg\) 独占式获取锁
 * protected boolean tryRelease\(int arg\) 独占式释放锁
