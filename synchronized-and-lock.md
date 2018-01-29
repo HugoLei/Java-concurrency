@@ -40,14 +40,6 @@ AbstractQueuedSynchronized状态访问与更新
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\)
 
-AbstractQueuedSynchronized可重写的方法
-
-* protected boolean tryAcquire\(int arg\) 独占式获取锁
-* protected boolean tryRelease\(int arg\) 独占式释放锁
-* protected int tryAcquireShared\(int arg\) 共享式获取锁，&gt;=0表示获取成功
-* protected boolean tryReleaseShared\(int arg\) 共享式释放锁
-* protected boolean isHeldExclusively\(\) 是否被当前线程独占
-
 AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
@@ -62,6 +54,14 @@ AbstractQueuedSynchronized三大类模板方法
   * releaseShared\(int arg\)
 * 查询同步队列中的等待线程情况
   * Collection&lt;Thread&gt; getQueuedThreads\(\)
+
+AbstractQueuedSynchronized可重写的方法
+
+* protected boolean tryAcquire\(int arg\) 独占式获取锁
+* protected boolean tryRelease\(int arg\) 独占式释放锁
+* protected int tryAcquireShared\(int arg\) 共享式获取锁，&gt;=0表示获取成功
+* protected boolean tryReleaseShared\(int arg\) 共享式释放锁
+* protected boolean isHeldExclusively\(\) 是否被当前线程独占
 
 # 同步队列
 
