@@ -119,5 +119,17 @@ Lock接口提供了锁功能。
 
 > 图片
 
+# TwinsLock
+
+在同一时刻，只允许至多两个线程同时访问，超过两个线程的访问将被阻塞。
+
+### 独占 or 共享？
+
+同一时刻支持多个线程访问，显然是共享的。
+
+* 使用模板方法acquireShared\(int arg\)等share相关方法
+* 重写tryAcquireShared\(int arg\)方法
+* state变化：合法值为0，1，2，初始为2，当一个线程获取，status减1，当线程释放，status+1
+
 
 
