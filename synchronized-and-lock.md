@@ -217,9 +217,7 @@ Lock接口提供了锁功能。
 
 ### 等待通知模型
 
-synchromized + wait\(\) notify\(\) 
+方式一：synchromized + wait\(\) notify\(\)
 
-Lock + Condition
-
-
+方式二：Lock + Condition
 
