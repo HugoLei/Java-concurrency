@@ -209,9 +209,17 @@ Lock接口提供了锁功能。
 
 # Condition接口
 
-监视器
+### 监视器
 
 每个Java对象都关联一个监视器，都拥有一组监视器方法（定义在Object中）
 
-等待/通知模型：wait\(\) notify\(\) + synchromized 
+等待/通知模型：wait\(\) notify\(\) + synchromized
+
+### 等待通知模型
+
+synchromized + wait\(\) notify\(\) 
+
+Lock + Condition
+
+
 
