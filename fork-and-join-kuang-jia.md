@@ -28,5 +28,84 @@ Join：合并子任务的执行结果
 * 优点：减少线程间的竞争，提高并行计算的能力
 * 缺点：消耗更多资源，如多个双端队列；竞争并没有被杜绝，在窃取的时候如果只剩一个任务了，还是会发生竞争
 
+示例：求和
+
+```
+@Override
+	protected Integer compute() {
+		int sum = 0;
+		boolean canCompute = (end - start) <= threshold;
+		System.out.println("Current thread:" + Thread.currentThread().getName() + "compute: " + start + "--" + end);
+		if (canCompute) {
+			for (int i=start +1; i<= end; ++i) {
+				sum += i;
+			}
+		} else {
+			int middle = (start + end) / 2;
+			TestForkJoin leftForkJoin = new TestForkJoin(start, middle);
+			TestForkJoin rightForkJoin = new TestForkJoin(middle, end);
+			invokeAll(leftForkJoin, rightForkJoin); // 1
+//			leftForkJoin.fork(); // 2
+//			rightForkJoin.fork(); // 2
+			int left = leftForkJoin.join();
+			int right = rightForkJoin.join();
+			sum = left + right;
+		}
+		return sum;
+	}
+```
+
+```
+# 分别调用fork()
+# 整个计算过程只用到了3个线程
+# ForkJoinPool-1-worker-1线程一直处在阻塞中，并未实际参与计算
+Current thread:main
+Current thread:ForkJoinPool-1-worker-1compute: 0--600
+Current thread:ForkJoinPool-1-worker-3compute: 300--600
+Current thread:ForkJoinPool-1-worker-3compute: 300--450
+Current thread:ForkJoinPool-1-worker-3compute: 300--375
+Current thread:ForkJoinPool-1-worker-3compute: 375--450
+Current thread:ForkJoinPool-1-worker-3compute: 450--600
+Current thread:ForkJoinPool-1-worker-3compute: 450--525
+Current thread:ForkJoinPool-1-worker-3compute: 525--600
+Current thread:ForkJoinPool-1-worker-2compute: 0--300
+Current thread:ForkJoinPool-1-worker-2compute: 0--150
+Current thread:ForkJoinPool-1-worker-2compute: 0--75
+Current thread:ForkJoinPool-1-worker-2compute: 75--150
+Current thread:ForkJoinPool-1-worker-2compute: 150--300
+Current thread:ForkJoinPool-1-worker-2compute: 150--225
+Current thread:ForkJoinPool-1-worker-2compute: 225--300
+sum:180300
+cost:7076919
+180300
+39665
+
+# ForkJoinTask# invokeAll()
+# 整个计算过程只用到了4个线程
+# ForkJoinPool-1-worker-1也执行了部分计算任务，compute: 0--75
+Current thread:main
+Current thread:ForkJoinPool-1-worker-1compute: 0--600
+Current thread:ForkJoinPool-1-worker-1compute: 0--300
+Current thread:ForkJoinPool-1-worker-1compute: 0--150
+Current thread:ForkJoinPool-1-worker-1compute: 0--75
+Current thread:ForkJoinPool-1-worker-2compute: 300--600
+Current thread:ForkJoinPool-1-worker-1compute: 75--150
+Current thread:ForkJoinPool-1-worker-3compute: 150--300
+Current thread:ForkJoinPool-1-worker-3compute: 150--225
+Current thread:ForkJoinPool-1-worker-0compute: 450--600
+Current thread:ForkJoinPool-1-worker-0compute: 450--525
+Current thread:ForkJoinPool-1-worker-0compute: 525--600
+Current thread:ForkJoinPool-1-worker-2compute: 300--450
+Current thread:ForkJoinPool-1-worker-2compute: 300--375
+Current thread:ForkJoinPool-1-worker-2compute: 375--450
+Current thread:ForkJoinPool-1-worker-1compute: 225--300
+sum:180300
+cost:5002036
+180300
+43279
+
+
+```
+
 
 
