@@ -55,6 +55,8 @@ Join：合并子任务的执行结果
     }
 ```
 
+运营环境：MacBook Pro，1 CPU，2物理内核，4逻辑内核
+
 ```
 # 分别调用fork()
 # 整个计算过程只用到了3个线程
@@ -75,11 +77,12 @@ Current thread:ForkJoinPool-1-worker-2compute: 75--150
 Current thread:ForkJoinPool-1-worker-2compute: 150--300
 Current thread:ForkJoinPool-1-worker-2compute: 150--225
 Current thread:ForkJoinPool-1-worker-2compute: 225--300
-
+cost:7076919ns
 
 # ForkJoinTask# invokeAll()
 # 整个计算过程只用到了4个线程
 # ForkJoinPool-1-worker-1也执行了部分计算任务，compute: 0--75
+# 因此此种方式的性能更好，cost:5002036 < cost:7076919
 Current thread:main
 Current thread:ForkJoinPool-1-worker-1compute: 0--600
 Current thread:ForkJoinPool-1-worker-1compute: 0--300
@@ -96,6 +99,7 @@ Current thread:ForkJoinPool-1-worker-2compute: 300--450
 Current thread:ForkJoinPool-1-worker-2compute: 300--375
 Current thread:ForkJoinPool-1-worker-2compute: 375--450
 Current thread:ForkJoinPool-1-worker-1compute: 225--300
+cost:5002036ns
 ```
 
 
