@@ -28,6 +28,17 @@ Join：合并子任务的执行结果
 * 优点：减少线程间的竞争，提高并行计算的能力
 * 缺点：消耗更多资源，如多个双端队列；竞争并没有被杜绝，在窃取的时候如果只剩一个任务了，还是会发生竞争
 
+### 线程数量
+
+默认情况下，Fork Join框架能使用的线程的数量是`Math.min(MAX_CAP, Runtime.getRuntime().availableProcessors())`，所以通常也就是系统的逻辑核数（我的MBP 是逻辑4核）
+
+```
+public ForkJoinPool() {
+        this(Math.min(MAX_CAP, Runtime.getRuntime().availableProcessors()),
+             defaultForkJoinWorkerThreadFactory, null, false);
+    }
+```
+
 ### 示例：求和
 
 ```
