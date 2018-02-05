@@ -14,11 +14,17 @@ Executor框架三大模块
 
 ### 任务的管理
 
-通过工厂类Executors创建三大类线程池
+两种任务管理器：
+
+1. ThreadPoolExecutor
+2. ScheduledThreadPoolExecutor
+
+通过工厂类Executors创建四大类线程池
 
 1. SingleThreadExecutor
 2. FixedThreadPool
 3. CachedThreadPool
+4. ScheduledThreadPoolExecutor
 
 线程池核心参数：
 
@@ -28,9 +34,25 @@ Executor框架三大模块
 * keepAliveTime：多余的空闲线程等待新任务的最长时间
 * handler：RejectedExecutionHandler，饱和时如何拒绝新的认为
 
-|  |  |
-| :--- | :--- |
-|  |  |
+#### ThreadPoolExecutor
+
+| 线程池 | corePool | maximumPool | workQueue | keepAliveTime |
+| :--- | :--- | :--- | :--- | :--- |
+| FixedThreadPool | n | n | LinkedBlockingQueue | 0 |
+| SingleThreadExecutor | 1 | 1 | LinkedBlockingQueue | 0 |
+| CachedThreadPool | 0 | Integer.MAX\_VALUE | SynchronousQueue | 60s |
+
+LinkedBlockingQueue：无界队列（大小为Integer.MAX\_VALUE）
+
+SynchronousQueue：无容量，提交的任务必须等一个线程来处理
+
+因为CachedThreadPool的maximumPool是无界的，因此可能出现创建过多的线程，导致耗尽CPU和内存资源
+
+#### ScheduledThreadPoolExecutor
+
+| 线程池 | corePool | maximumPool | workQueue | keepAliveTime |
+| :--- | :--- | :--- | :--- | :--- |
+| ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
 
 
 
