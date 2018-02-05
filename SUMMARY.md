@@ -9,5 +9,5 @@
 * [Fork & Join 框架](fork-and-join-kuang-jia.md)
 * [CPU](cpu.md)
 * [线程池](xian-cheng-chi.md)
-* 线程间的通信
+* [线程间的通信](xian-cheng-jian-de-tong-xin.md)
 
