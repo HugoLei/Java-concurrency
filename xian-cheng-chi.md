@@ -83,5 +83,13 @@ DelayedWorkQueue：
 
 FutureTask类实现了Future接口
 
+当前线程提交了FutureTask任务后，若想要获取任务执行的结果，需要调用FutureTask的get\(\)
+
+如果get\(\)不成功，当前线程会被阻塞住
+
+FutureTask任务执行完后，执行结果放在任务对象里，然后唤醒当前线程，当前线程从任务对象里获取结果
+
+> 核心：共享变量（任务对象）
+
 
 
