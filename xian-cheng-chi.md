@@ -19,6 +19,14 @@ Executor框架三大模块
 1. ThreadPoolExecutor
 2. ScheduledThreadPoolExecutor
 
+任务管理器核心参数：
+
+* corePool：核心线程池大小
+* maximumPool：最大线程池的大小
+* workQueue：暂时保存任务的工作队列
+* keepAliveTime：多余的空闲线程等待新任务的最长时间
+* handler：RejectedExecutionHandler，饱和时如何拒绝新的认为
+
 管理模式：
 
 1. 如果线程数少于corePool，则创建线程
@@ -33,14 +41,6 @@ Executor框架三大模块
 2. FixedThreadPool
 3. CachedThreadPool
 4. ScheduledThreadPoolExecutor
-
-线程池核心参数：
-
-* corePool：核心线程池大小
-* maximumPool：最大线程池的大小
-* workQueue：暂时保存任务的工作队列
-* keepAliveTime：多余的空闲线程等待新任务的最长时间
-* handler：RejectedExecutionHandler，饱和时如何拒绝新的认为
 
 #### ThreadPoolExecutor
 
