@@ -42,7 +42,7 @@ Executor框架三大模块
 | SingleThreadExecutor | 1 | 1 | LinkedBlockingQueue | 0 |
 | CachedThreadPool | 0 | Integer.MAX\_VALUE | SynchronousQueue | 60s |
 
-LinkedBlockingQueue：无界队列（大小为Integer.MAX\_VALUE）
+LinkedBlockingQueue：无界队列（大小为Integer.MAX\_VALUE）（因此maximumPool参数就无意义了）
 
 SynchronousQueue：无容量，提交的任务必须等一个线程来处理
 
@@ -53,6 +53,19 @@ SynchronousQueue：无容量，提交的任务必须等一个线程来处理
 | 线程池 | corePool | maximumPool | workQueue | keepAliveTime |
 | :--- | :--- | :--- | :--- | :--- |
 | ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
+
+Scheduled任务有三个属性：
+
+* time // 具体的执行时间
+* sequenceNumber // 该任务的序号
+* period // 任务的间隔周期
+
+DelayedWorkQueue：
+
+* 封装了一个PriorityQueue
+* 排序优先级：time小，sequenceNumber小
+
+### 任务的返回结果
 
 
 
