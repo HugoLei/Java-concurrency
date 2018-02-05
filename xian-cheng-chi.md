@@ -79,5 +79,9 @@ DelayedWorkQueue：
 
 线程能够返回结果的本质是：一个线程能看到另一个线程的执行结果，也即线程间的通信[/线程间的通信](/线程间的通信)
 
-Future接口 和 实现了该接口的FutureTask类
+#### Future接口 和 FutureTask类
+
+FutureTask类实现了Future接口
+
+
 
