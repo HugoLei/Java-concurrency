@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [JAVA](bian-yi.md)
+* [JAVA基础](bian-yi.md)
   * [&lt;clinit&gt;与&lt;init&gt;](bian-yi/clinit4e0e3c-init.md)
   * [class文件](classwen-jian.md)
   * [原子操作类](bian-yi/yuan-zi-cao-zuo-lei.md)
