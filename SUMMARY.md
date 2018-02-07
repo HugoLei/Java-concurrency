@@ -4,6 +4,7 @@
 * [JAVA](bian-yi.md)
   * [&lt;clinit&gt;与&lt;init&gt;](bian-yi/clinit4e0e3c-init.md)
   * [class文件](classwen-jian.md)
+  * [原子操作类](bian-yi/yuan-zi-cao-zuo-lei.md)
 * [线程池](xian-cheng-chi.md)
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
