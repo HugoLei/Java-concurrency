@@ -43,6 +43,12 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 例如：ArrayBlockingQueue使用Condition
 
+```
+while (count == items.length)
+    notFull.await(); // 若满了，则等待队列不满notFull；若被唤醒后，队列还是满的，则继续等待（while循环）
+enqueue(e);
+```
+
 # 多线程环境下的通知模式是什么？
 
 参见[Java线程间通信](/jvm/javaxian-cheng-jian-tong-xin.md)
