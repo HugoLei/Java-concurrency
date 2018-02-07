@@ -34,3 +34,7 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 例如：ArrayBlockingQueue使用Condition
 
+# 多线程环境下的通知模式是什么？
+
+
+
