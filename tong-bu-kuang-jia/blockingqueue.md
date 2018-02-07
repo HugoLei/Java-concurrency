@@ -39,7 +39,7 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 # 阻塞队列实现原理
 
-> 通知模式
+> 等待通知模式
 
 例如：ArrayBlockingQueue使用Condition
 
@@ -47,6 +47,7 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 // notEmpty = lock.newCondition();
 // notFull =  lock.newCondition();
 
+// 阻塞式插入
 while (count == items.length)
     notFull.await(); // 若满了，则等待队列不满notFull；若被唤醒后，队列还是满的，则继续等待（while循环）
 enqueue(e);
