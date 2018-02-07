@@ -36,5 +36,7 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 # 多线程环境下的通知模式是什么？
 
+参见[Java线程间通信](/jvm/javaxian-cheng-jian-tong-xin.md)
+
 
 

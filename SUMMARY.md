@@ -10,6 +10,7 @@
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
 * [JVM](jvm.md)
+  * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * [线程间通信](cao-zuo-xi-tong/xian-cheng-jian-tong-xin.md)
 * [计算机体系结构](ji-suan-ji-ti-xi-jie-gou.md)
