@@ -44,21 +44,19 @@ Executor框架三大模块
 
 #### ThreadPoolExecutor
 
-| 线程池 | corePool | maximumPool | workQueue | keepAliveTime |
+| 线程池 | corePool | maximumPool | BlockingQueue | keepAliveTime |
 | :--- | :--- | :--- | :--- | :--- |
 | FixedThreadPool | n | n | LinkedBlockingQueue | 0 |
 | SingleThreadExecutor | 1 | 1 | LinkedBlockingQueue | 0 |
 | CachedThreadPool | 0 | Integer.MAX\_VALUE | SynchronousQueue | 60s |
 
-workQueue：用来存任务，而不是线程
+BlockingQueue：用来存任务（而不是线程，不要跟线程的同步队列搞混）
 
 LinkedBlockingQueue：无界队列（大小为Integer.MAX\_VALUE）（因此maximumPool参数就无意义了）
 
 SynchronousQueue：无容量，提交的任务必须等一个线程来处理
 
 因为CachedThreadPool的maximumPool是无界的，因此可能出现创建过多的线程，导致耗尽CPU和内存资源
-
-
 
 #### ScheduledThreadPoolExecutor
 
