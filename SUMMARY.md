@@ -8,7 +8,7 @@
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
 * [同步框架](tong-bu-kuang-jia.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
-  * BlockingQueue
+  * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
 * [JVM](jvm.md)
 * [操作系统](cao-zuo-xi-tong.md)
   * [线程间通信](cao-zuo-xi-tong/xian-cheng-jian-tong-xin.md)
