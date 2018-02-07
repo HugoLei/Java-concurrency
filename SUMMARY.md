@@ -13,7 +13,6 @@
 * [JVM](jvm.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
 * [操作系统](cao-zuo-xi-tong.md)
-  * [线程间通信](cao-zuo-xi-tong/xian-cheng-jian-tong-xin.md)
 * [计算机体系结构](ji-suan-ji-ti-xi-jie-gou.md)
   * [CPU](ji-suan-ji-ti-xi-jie-gou/cpu.md)
   * [CAS原理](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
