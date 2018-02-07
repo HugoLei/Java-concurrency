@@ -35,7 +35,7 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 ### 同步的实现原理
 
-
+参见[AbstractQueuedSynchronizer](/tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
 
 ### 阻塞的实现原理
 
