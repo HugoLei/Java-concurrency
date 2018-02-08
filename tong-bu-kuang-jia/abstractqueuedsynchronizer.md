@@ -15,11 +15,15 @@
 
 ### 同步状态
 
-> 状态代表的是：公共资源
+> 同步状态代表的是：公共资源
+>
+> 获取到同步状态，则表示拥有了对公共资源的访问权限
 
 ```
-volatile int state;
+volatile int state; // 同步状态
 ```
+
+##### 与同步状态相关的操作
 
 * getState\(\)
 * setState\(int newState\)
@@ -39,13 +43,15 @@ volatile int state;
 
 包含tail，方便入队
 
-@图 见书
+@图一，初始队列
+
+@图二，入队操作
 
 ```
 volatile Node head;
 volatile Node tail;
 
-// 入队
+// 入队操作
 /**
      * Inserts node into queue, initializing if necessary. See picture above.
      * @param node the node to insert
@@ -68,6 +74,8 @@ volatile Node tail;
     }
 ```
 
+
+
 ##### 队列中的线程在做什么？
 
 队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态
@@ -84,6 +92,8 @@ for (;;) {
     // 此处忽略部分源码
 }
 ```
+
+@图三 出队操作 setHead操作，为了维护FIFO
 
 ### AbstractQueuedSynchronized三大类模板方法
 
