@@ -4,7 +4,7 @@
 
 包括：
 
-* 一个volatile同步状态 + 一个FIFO双向队列（暂存等待状态的线程的队列）
+* 一个volatile同步状态 + 一个FIFO双向队列（暂存阻塞状态的线程的队列）
 * 对同步状态的同步操作
 * 对FIFO队列的同步操作
 
@@ -35,6 +35,10 @@ volatile int state;
 
 ##### 队列模型
 
+队列只包含首节点head和尾节点tail
+
+@图 见书
+
 ```
 volatile Node head;
 volatile Node tail;
@@ -61,6 +65,8 @@ volatile Node tail;
         }
     }
 ```
+
+### 
 
 ### AbstractQueuedSynchronized三大类模板方法
 
