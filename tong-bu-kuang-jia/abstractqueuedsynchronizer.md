@@ -4,7 +4,7 @@
 
 包括：
 
-* 一个volatile同步状态 + 一个FIFO队列（暂存等待状态的线程的队列）
+* 一个volatile同步状态 + 一个FIFO双向队列（暂存等待状态的线程的队列）
 * 对同步状态的访问/修改
 * 对FIFO队列的同步操作
 
@@ -23,7 +23,7 @@
 
 ### 线程FIFO队列
 
-> 由Node组织起来的链表
+> 由Node组织起来的双向链表
 
 ### AbstractQueuedSynchronized三大类模板方法
 
