@@ -29,15 +29,37 @@ volatile int state;
 
 > 由Node组织起来的双向链表
 
-Node模型
+##### Node模型
 
 ![](/assets/node.png)
 
-队列模型
+##### 队列模型
 
 ```
 volatile Node head;
 volatile Node tail;
+
+// 入队
+/**
+     * Inserts node into queue, initializing if necessary. See picture above.
+     * @param node the node to insert
+     * @return node's predecessor
+     */
+    private Node enq(final Node node) {
+        for (;;) {
+            Node t = tail;
+            if (t == null) { // Must initialize
+                if (compareAndSetHead(new Node())) // CAS设置head
+                    tail = head;
+            } else {
+                node.prev = t;
+                if (compareAndSetTail(t, node)) { // CAS设置tail
+                    t.next = node;
+                    return t;
+                }
+            }
+        }
+    }
 ```
 
 ### AbstractQueuedSynchronized三大类模板方法
