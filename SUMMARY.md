@@ -10,7 +10,7 @@
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
 * [同步框架](tong-bu-kuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
-  * [AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
+  * [同步器AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
 * [JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
