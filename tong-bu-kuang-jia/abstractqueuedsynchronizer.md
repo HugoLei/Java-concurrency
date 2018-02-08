@@ -2,7 +2,7 @@
 
 提供了
 
-* FIFO队列来维护等待的线程
+* 管理等待状态的线程的队列
 * 状态访问/修改方法
 
 ### Lock + AbstractQueuedSynchronized
