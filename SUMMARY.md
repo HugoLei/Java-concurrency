@@ -12,11 +12,14 @@
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [同步器AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
+  * LockSupport
 * [JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
+  * unsafe
 * [操作系统](cao-zuo-xi-tong.md)
 * [计算机体系结构](ji-suan-ji-ti-xi-jie-gou.md)
   * [CPU、高速缓存、主存](ji-suan-ji-ti-xi-jie-gou/cpu.md)
   * [CAS原理](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
+  * volatile
 
