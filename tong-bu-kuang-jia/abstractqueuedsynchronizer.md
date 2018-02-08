@@ -1,11 +1,12 @@
 # 同步器AbstractQueuedSynchronized
 
-提供了一个通用的多线程同步管理的框架，在此框架之上可以构建各种形式的Lock。
+提供了一个通用的多线程同步管理的基础框架，在此框架之上可以构建各种形式的Lock。
 
 包括：
 
-* 暂存等待状态的线程的队列
+* 一个volatile同步状态 + 一个FIFO队列（暂存等待状态的线程的队列）
 * 对同步状态的访问/修改
+* 对FIFO队列的同步操作
 
 ### Lock + AbstractQueuedSynchronized
 
