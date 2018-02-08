@@ -74,8 +74,6 @@ volatile Node tail;
     }
 ```
 
-
-
 ##### 队列中的线程在做什么？
 
 队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态
@@ -117,6 +115,8 @@ for (;;) {
 * protected int tryAcquireShared\(int arg\) 共享式获取锁，&gt;=0表示获取成功
 * protected boolean tryReleaseShared\(int arg\) 共享式释放锁
 * protected boolean isHeldExclusively\(\) 是否被当前线程独占
+
+> ~~画一个线程从lock（）到release（）的函数调用时序图~~
 
 
 
