@@ -35,7 +35,9 @@ volatile int state;
 
 ##### 队列模型
 
-队列只包含首节点head和尾节点tail
+链表，队列只包含首节点head和尾节点tail
+
+包含tail，方便入队
 
 @图 见书
 
@@ -66,7 +68,22 @@ volatile Node tail;
     }
 ```
 
-### 
+##### 队列中的线程在做什么？
+
+队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态
+
+```
+for (;;) {
+    final Node p = node.predecessor();
+    if (p == head && tryAcquire(arg)) { // 队列头部的线程有机会获取到同步状态，后续线程一直处在阻塞中
+        setHead(node);
+        p.next = null; // help GC
+        failed = false;
+        return interrupted;
+    }
+    // 此处忽略部分源码
+}
+```
 
 ### AbstractQueuedSynchronized三大类模板方法
 
