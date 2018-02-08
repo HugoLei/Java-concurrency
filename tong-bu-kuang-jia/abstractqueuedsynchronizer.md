@@ -14,7 +14,7 @@
 
 ### AbstractQueuedSynchronized状态访问与更新
 
-> 状态代表的是：共享的资源
+> 状态代表的是：公共资源
 
 * getState\(\)
 * setState\(int newState\)
