@@ -23,7 +23,7 @@
 
 ### 线程FIFO队列
 
-
+> 由Node组织起来的链表
 
 ### AbstractQueuedSynchronized三大类模板方法
 
