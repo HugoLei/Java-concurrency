@@ -3,7 +3,7 @@
 提供了
 
 * 暂存等待状态的线程的队列
-* 状态访问/修改方法
+* 对同步状态的访问/修改
 
 ### Lock + AbstractQueuedSynchronized
 
