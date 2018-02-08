@@ -13,13 +13,17 @@
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
-### AbstractQueuedSynchronized状态访问与更新
+### 同步状态
 
 > 状态代表的是：公共资源
 
 * getState\(\)
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\)
+
+### 线程FIFO队列
+
+
 
 ### AbstractQueuedSynchronized三大类模板方法
 
