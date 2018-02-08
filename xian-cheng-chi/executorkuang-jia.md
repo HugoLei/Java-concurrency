@@ -60,7 +60,7 @@ SynchronousQueue：无容量，提交的任务必须等一个线程来处理
 
 #### ScheduledThreadPoolExecutor
 
-| 线程池 | corePool | maximumPool | workQueue | keepAliveTime |
+| 线程池 | corePool | maximumPool | BlockingQueue | keepAliveTime |
 | :--- | :--- | :--- | :--- | :--- |
 | ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
 
