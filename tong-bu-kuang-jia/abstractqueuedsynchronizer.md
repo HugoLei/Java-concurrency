@@ -17,6 +17,10 @@
 
 > 状态代表的是：公共资源
 
+```
+volatile int state;
+```
+
 * getState\(\)
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\)
@@ -24,6 +28,15 @@
 ### 线程FIFO队列
 
 > 由Node组织起来的双向链表
+
+![](/assets/node.png)
+
+队列模型
+
+```
+volatile Node head;
+volatile Node tail;
+```
 
 ### AbstractQueuedSynchronized三大类模板方法
 
