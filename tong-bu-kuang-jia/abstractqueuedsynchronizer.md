@@ -49,7 +49,7 @@ volatile int state; // 同步状态
 
 @图二，插入第一个节点
 
-![](/assets/AQS_queue_first.png)
+![](/assets/AQS_queue_first_.png)
 
 在插入第一个节点时，其实队列的首节点是个空的node。这样做，主要是为了队列中阻塞状态的线程的行为是一致的（参见下一节：队列中的线程在做什么？）。
 
@@ -101,7 +101,19 @@ for (;;) {
 }
 ```
 
+```
+private void setHead(Node node) {
+    head = node;
+    node.thread = null;
+    node.prev = null;
+}
+```
+
+![](/assets/AQS_queue_sethead.png)
+
 @图三 出队操作 setHead操作，为了维护FIFO
+
+
 
 ### AbstractQueuedSynchronized三大类模板方法
 
