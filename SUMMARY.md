@@ -10,8 +10,8 @@
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
 * [同步控制](tong-bu-kuang-jia.md)
-  * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [同步器AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
+  * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
   * LockSupport
 * [JVM](jvm.md)

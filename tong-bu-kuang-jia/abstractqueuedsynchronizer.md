@@ -45,7 +45,13 @@ volatile int state; // 同步状态
 
 @图一，初始队列
 
-@图二，入队操作
+![](/assets/AQS_queue_init.png)
+
+@图二，插入第一个节点
+
+![](/assets/AQS_queue_first.png)
+
+在插入第一个节点时，其实队列的首节点是个空的node。这样做，主要是为了队列中阻塞状态的线程的行为是一致的（参见下一节：队列中的线程在做什么？）。
 
 ```
 volatile Node head;
@@ -74,13 +80,17 @@ volatile Node tail;
     }
 ```
 
+##### 
+
 ##### 队列中的线程在做什么？
 
 队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态
 
 ```
 for (;;) {
-    final Node p = node.predecessor();
+    final Node p = node.predecessor(); 
+    // 第一个真实节点的前节点是个空的node，这样所有真实节点的处理逻辑都是一样的
+    // 都是判断前节点是否首节点
     if (p == head && tryAcquire(arg)) { // 队列头部的线程有机会获取到同步状态，后续线程一直处在阻塞中
         setHead(node);
         p.next = null; // help GC
