@@ -119,7 +119,7 @@ private void setHead(Node node) {
    1. 所有节点都阻塞
    2. 首节点获取到同步状态并且执行，而其他节点都阻塞
 2. 为什么在获取同步状态时，需要判断前节点是否首节点？
-   1. 可以这个链式数据结构是个FIFO的Queue
+   1. 可以保证这个链式数据结构是个FIFO的Queue
 3. 为什么是双向的？
    1. 参考2，因其需要找前节点
 
@@ -147,10 +147,6 @@ private void setHead(Node node) {
 * protected boolean isHeldExclusively\(\) 是否被当前线程独占
 
 > ~~画一个线程从lock（）到release（）的函数调用时序图~~
-
-
-
-
 
 ### 独占式·同步状态获取与释放
 
