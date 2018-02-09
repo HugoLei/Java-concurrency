@@ -113,8 +113,6 @@ private void setHead(Node node) {
 
 @图三 出队操作 setHead操作，为了维护FIFO
 
-
-
 ### AbstractQueuedSynchronized三大类模板方法
 
 * 独占式获取与释放同步状态
