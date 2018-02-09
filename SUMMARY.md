@@ -1,5 +1,6 @@
 # Summary
 
+* [项目笔记](xiang-mu-bi-ji.md)
 * [Introduction](README.md)
 * [JAVA基础](bian-yi.md)
   * [&lt;clinit&gt;与&lt;init&gt;](bian-yi/clinit4e0e3c-init.md)
@@ -8,7 +9,7 @@
 * [线程池](xian-cheng-chi.md)
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
-* [同步框架](tong-bu-kuang-jia.md)
+* [同步控制](tong-bu-kuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [同步器AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
