@@ -92,7 +92,7 @@ for (;;) {
     // 第一个真实节点的前节点是个空的node，这样所有真实节点的处理逻辑都是一样的
     // 都是判断前节点是否首节点
     if (p == head && tryAcquire(arg)) { // 队列头部的线程有机会获取到同步状态，后续线程一直处在阻塞中
-        setHead(node);
+        setHead(node); // 只有一个节点设置自己为首节点，所以head不需要同步
         p.next = null; // help GC
         failed = false;
         return interrupted;
@@ -112,6 +112,16 @@ private void setHead(Node node) {
 ![](/assets/AQS_queue_sethead.png)
 
 @图三 出队操作 setHead操作，为了维护FIFO
+
+### 这个队列模型的特点
+
+1. 如果队列不为空，则队列有两种状
+   1. 所有节点都阻塞
+   2. 首节点获取到同步状态并且执行，而其他节点都阻塞
+2. 为什么在获取同步状态时，需要判断前节点是否首节点？
+   1. 可以这个链式数据结构是个FIFO的Queue
+3. 为什么是双向的？
+   1. 参考2，因其需要找前节点
 
 ### AbstractQueuedSynchronized三大类模板方法
 
@@ -137,6 +147,45 @@ private void setHead(Node node) {
 * protected boolean isHeldExclusively\(\) 是否被当前线程独占
 
 > ~~画一个线程从lock（）到release（）的函数调用时序图~~
+
+
+
+
+
+### 独占式·同步状态获取与释放
+
+> 互斥访问
+>
+> 同步状态只有true false
+
+1. 获取成功，正常执行
+2. 获取失败，自旋CAS加入tail后面，进入同步队列
+3. 线程进入自旋阻塞（自旋阻塞其实就是死循环）
+4. 在自旋阻塞过程中尝试获取锁（判断前节点是否是head，是head并且获取到锁，把自身设置为head）
+5. 释放锁，唤醒首节点的后继节点（通过LockSupport）
+
+> 图片
+
+### 共享式·同步状态获取与释放
+
+> 同时支持若干线程访问
+>
+> 同步状态代表可同时访问的线程的数量
+
+与独占式的区别：
+
+独占式中获取锁的方法，返回值是true false（互斥的）
+
+共享式中获取锁的方法，返回值&gt;=0表示获取到锁
+
+### 超时·可中断·独占式·同步状态获取与释放
+
+1. 在自旋阻塞过程中，若获取锁成功，返回
+2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
+3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不断缩小）
+4. 如果线程被interrupt，抛出中断异常
+
+> 图片
 
 
 
