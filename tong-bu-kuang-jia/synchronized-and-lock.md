@@ -20,10 +20,6 @@ Lock接口提供了锁功能。
 
 所以Java并发包提供了队列同步器AbstractQueuedSynchronized来支持锁的开发。
 
-# 
-
-# 
-
 # TwinsLock
 
 在同一时刻，只允许至多两个线程同时访问，超过两个线程的访问将被阻塞。
