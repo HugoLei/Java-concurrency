@@ -129,12 +129,12 @@ private void setHead(Node node) {
 
 * 独占式获取与释放同步状态
   * acquire\(int arg\)
-  * acquireInterruptibly\(int arg\)
+  * acquireInterruptibly\(int arg\) // 响应中断
   * tryAcquireNanos\(int arg, long nanos\)
   * release\(int arg\)
 * 共享式获取与释放同步状态
   * acquireShared\(int arg\)
-  * acquireSharedInterruptibly\(int arg\)
+  * acquireSharedInterruptibly\(int arg\) // 响应中断
   * tryAcquireSharedNanos\(int arg, long nanos\)
   * releaseShared\(int arg\)
 * 查询同步队列中的等待线程情况
@@ -173,9 +173,10 @@ protected boolean tryAcquire(int arg)
 
 ### 响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)
 
-> 响应中断是如何实现的？
+> 响应中断是如何实现的？方法入口+阻塞中
 
 ```
+// 方法入口处响应中断
 public final void acquireInterruptibly(int arg) throws InterruptedException {
     if (Thread.interrupted()) // 此处响应中断
         throw new InterruptedException();
