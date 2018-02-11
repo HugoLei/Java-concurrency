@@ -11,7 +11,7 @@
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
 * [同步控制](tong-bu-kuang-jia.md)
-  * [同步器AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
+  * [同步框架AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [Synchronized and Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
   * [LockSupport](tong-bu-kuang-jia/locksupport.md)
 * [JVM](jvm.md)

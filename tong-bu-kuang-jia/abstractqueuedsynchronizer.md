@@ -1,4 +1,4 @@
-# 同步器AbstractQueuedSynchronized
+# 同步框架AbstractQueuedSynchronized
 
 提供了一个通用的多线程同步管理的基础框架，在此框架之上可以构建各种形式的Lock。
 
