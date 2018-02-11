@@ -190,7 +190,7 @@ for (;;) {
     if (p == head) {
         int r = tryAcquireShared(arg);
         // 与独占式的区别，此处不再判断true/false，而是判断一个int>=0
-        // 在共享模式下，同步状态有多个合法值，所以不再用true/false
+        // 在共享模式下，同步状态有多个合法值，所以不再用true/false，改用int
         if (r >= 0) { 
             setHeadAndPropagate(node, r);
             p.next = null; // help GC
