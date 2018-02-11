@@ -14,6 +14,7 @@
   * [同步框架AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [基于AQS的Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
   * [Synchronized](tong-bu-kuang-jia/synchronized.md)
+  * 等待/通知模型
   * [LockSupport](tong-bu-kuang-jia/locksupport.md)
 * [JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)

@@ -1,4 +1,8 @@
-# LockSupport
+# LockSupport工具
+
+用来阻塞或唤醒线程
+
+> ~~实现原理是什么？~~
 
 
 
