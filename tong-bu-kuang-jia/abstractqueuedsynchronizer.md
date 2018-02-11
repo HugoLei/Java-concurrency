@@ -1,4 +1,4 @@
-# 同步框架AbstractQueuedSynchronized
+# 同步框架AbstractQueuedSynchronized（简称AQS）
 
 提供了一个通用的多线程同步管理的基础框架，在此框架之上可以构建各种形式的Lock。
 
@@ -124,6 +124,14 @@ private void setHead(Node node) {
    1. 可以保证这个链式数据结构是个FIFO的Queue
 3. 为什么是双向的？
    1. 参考2，因其需要找前节点
+
+
+
+AQS同步框架支持两大类的同步：独占式+共享式
+
+在每种类型的同步中又细分为普通模式，响应中断模式，超时并响应中断模式三类。
+
+下面将详细介绍各类同步模式。
 
 ### AbstractQueuedSynchronized三大类模板方法
 
