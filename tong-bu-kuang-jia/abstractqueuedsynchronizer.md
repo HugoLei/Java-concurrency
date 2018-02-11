@@ -84,7 +84,7 @@ volatile Node tail;
 
 ##### 队列中的线程在做什么？ {#dead-loop}
 
-队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态
+队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态（独占式获取同步状态）
 
 ```
 for (;;) {
@@ -166,6 +166,8 @@ public final void acquire(int arg) {
 }
 ```
 
+独占模式下，阻塞中的线程在做什么？参见[队列中的线程在做什么？](#dead-loop)
+
 ### 共享式·同步状态获取与释放
 
 > 同时支持若干线程访问
@@ -176,9 +178,32 @@ public final void acquire(int arg) {
 
 ```
 public final void acquireShared(int arg) {
-        if (tryAcquireShared(arg) < 0)
-            doAcquireShared(arg);
+    if (tryAcquireShared(arg) < 0)
+        doAcquireShared(arg);
+}
+```
+
+```
+// 共享模式下，阻塞中的线程在做什么
+for (;;) {
+    final Node p = node.predecessor();
+    if (p == head) {
+        int r = tryAcquireShared(arg);
+        // 与独占式的区别，此处不再判断true/false，而是判断一个int>=0
+        // 在共享模式下，同步状态有多个合法值，所以不再用true/false
+        if (r >= 0) { 
+            setHeadAndPropagate(node, r);
+            p.next = null; // help GC
+            if (interrupted)
+                selfInterrupt();
+            failed = false;
+            return;
+        }
     }
+    if (shouldParkAfterFailedAcquire(p, node) &&
+        parkAndCheckInterrupt())
+        interrupted = true;
+}
 ```
 
 与独占式的区别：
