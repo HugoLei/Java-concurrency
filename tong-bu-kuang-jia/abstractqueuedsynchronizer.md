@@ -13,7 +13,9 @@
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
-### 同步状态
+# AQS模型：同步状态+线程FIFO队列
+
+## 同步状态
 
 > 同步状态代表的是：公共资源
 >
@@ -23,21 +25,21 @@
 volatile int state; // 同步状态
 ```
 
-##### 与同步状态相关的操作
+### 与同步状态相关的操作
 
 * getState\(\)
 * setState\(int newState\)
 * compareAndSetState\(int expect, int update\) // CAS原子操作
 
-### 线程FIFO队列
+## 线程FIFO队列
 
 > 由Node组织起来的双向链表
 
-##### Node模型
+### Node模型
 
 ![](/assets/node.png)
 
-##### 队列模型
+### 队列模型
 
 链表，队列只包含首节点head和尾节点tail
 
@@ -80,9 +82,7 @@ volatile Node tail;
     }
 ```
 
-##### 
-
-##### 队列中的线程在做什么？ {#dead-loop}
+### 队列中的线程在做什么？
 
 队列中的线程会处于阻塞（死循环）中，并且只有队列头部的那个线程有机会获取到同步状态（独占式获取同步状态）
 
@@ -125,7 +125,7 @@ private void setHead(Node node) {
 3. 为什么是双向的？
    1. 参考2，因其需要找前节点
 
-
+## AQS同步模式
 
 AQS同步框架支持两大类的同步：独占式+共享式
 
@@ -133,7 +133,7 @@ AQS同步框架支持两大类的同步：独占式+共享式
 
 下面将详细介绍各类同步模式。
 
-### AbstractQueuedSynchronized三大类模板方法
+### AQS三大类模板方法
 
 * 独占式获取与释放同步状态
   * acquire\(int arg\)
@@ -148,7 +148,7 @@ AQS同步框架支持两大类的同步：独占式+共享式
 * 查询同步队列中的等待线程情况
   * Collection&lt;Thread&gt; getQueuedThreads\(\)
 
-### AbstractQueuedSynchronized可重写的方法
+### AQS可重写的方法
 
 * protected boolean tryAcquire\(int arg\) 独占式获取锁
 * protected boolean tryRelease\(int arg\) 独占式释放锁
@@ -217,7 +217,7 @@ for (;;) {
 }
 ```
 
-### 关于响应中断 {#interrupt}
+### 关于响应中断
 
 > 以响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)为例
 >
