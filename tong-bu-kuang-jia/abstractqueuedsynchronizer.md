@@ -184,7 +184,6 @@ protected boolean tryAcquire(int arg)
 ### 共享式·同步状态获取与释放
 
 > 同时支持若干线程访问
->
 > 同步状态有多个合法状态
 
 调用AQS.acquireShared\(int arg\)模板方法，然后在子类中重写protected int tryAcquireShared\(int arg\)，注意此方法只会返回int（与独占式访问返回boolean不同）。
@@ -222,9 +221,7 @@ for (;;) {
 ### 关于响应中断
 
 > 以响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)为例
->
 > 响应中断是如何实现的？方法入口+阻塞中
->
 > 其他同步模式中响应中断的方式与此类似
 
 ```
@@ -263,7 +260,6 @@ private void doAcquireInterruptibly(int arg) throws InterruptedException {
 ### 超时·响应中断·独占式·同步状态获取tryAcquireNanos\(arg, timeout\)
 
 > 独占式、共享式，超时访问都响应中断，中断方式见[关于响应中断](#interrupt)
->
 > 这里关注超时是如何实现
 
 ```
