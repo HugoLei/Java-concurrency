@@ -209,10 +209,10 @@ for (;;) {
 }
 ```
 
-### 关于响应中断
+### 关于响应中断 {#interrupt}
 
 > 以响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)为例
-
+>
 > 响应中断是如何实现的？方法入口+阻塞中
 >
 > 其他同步模式中响应中断的方式与此类似
@@ -252,12 +252,37 @@ private void doAcquireInterruptibly(int arg) throws InterruptedException {
 
 ### 超时·响应中断·独占式·同步状态获取tryAcquireNanos\(arg, timeout\)
 
-1. 在自旋阻塞过程中，若获取锁成功，返回
-2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
-3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不断缩小）
-4. 如果线程被interrupt，抛出中断异常
+> 独占式、共享式，超时访问都响应中断，中断方式见[关于响应中断](#interrupt)
+>
+> 这里关注超时是如何实现
 
-### 
+```
+// 以独占式超时访问为例
+// 超时实现：在自旋阻塞时，不断计算剩余等待时长，若此时长<=0，则表明已超时
+private boolean doAcquireNanos(int arg, long nanosTimeout) throws InterruptedException {
+    if (nanosTimeout <= 0L)
+        return false;
+    final long deadline = System.nanoTime() + nanosTimeout; // 计算出终止时间
+    // 省略
+    try {
+        for (;;) {
+            final Node p = node.predecessor();
+            if (p == head && tryAcquire(arg)) {
+                setHead(node);
+                p.next = null; // help GC
+                failed = false;
+                return true;
+            }
+            nanosTimeout = deadline - System.nanoTime(); // 计算剩余等待时长
+            if (nanosTimeout <= 0L) // 若等待时长<=0，表明已超时
+                return false;
+            // 省略
+        }
+    } finally {
+        // 省略
+    }
+}
+```
 
 
 
