@@ -166,11 +166,20 @@ public final void acquire(int arg) {
 }
 ```
 
-#### 共享式·同步状态获取与释放
+### 共享式·同步状态获取与释放
 
 > 同时支持若干线程访问
 >
-> 同步状态代表可同时访问的线程的数量
+> 同步状态有多个合法状态
+
+调用AQS.acquireShared\(int arg\)模板方法，然后在子类中重写protected int tryAcquireShared\(int arg\)，注意此方法只会返回int（与独占式访问返回boolean不同）。
+
+```
+public final void acquireShared(int arg) {
+        if (tryAcquireShared(arg) < 0)
+            doAcquireShared(arg);
+    }
+```
 
 与独占式的区别：
 
