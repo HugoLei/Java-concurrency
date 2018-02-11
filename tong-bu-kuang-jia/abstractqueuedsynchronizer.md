@@ -156,9 +156,15 @@ private void setHead(Node node) {
 >
 > 同步状态只有两个合法状态
 
-调用AQS.acquire\(int arg\)模板方法，然后在子类中重写protected boolean tryAcquire\(int arg\)
+调用AQS.acquire\(int arg\)模板方法，然后在子类中重写protected boolean tryAcquire\(int arg\)，注意此方法只会返回true/false。
 
-> 图片
+```
+public final void acquire(int arg) {
+    if (!tryAcquire(arg) &&
+        acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+        selfInterrupt();
+}
+```
 
 #### 共享式·同步状态获取与释放
 
