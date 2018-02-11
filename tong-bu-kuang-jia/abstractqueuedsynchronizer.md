@@ -150,7 +150,7 @@ private void setHead(Node node) {
 
 > ~~画一个线程从lock（）到release（）的函数调用时序图~~
 
-### 独占式·同步状态获取与释放
+### 独占式·同步状态获取acquire\(int arg\)
 
 > 互斥访问
 >
@@ -164,9 +164,48 @@ public final void acquire(int arg) {
         acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
         selfInterrupt();
 }
+
+// tryAcquire方法
+protected boolean tryAcquire(int arg)
 ```
 
 独占模式下，阻塞中的线程在做什么？参见[队列中的线程在做什么？](#dead-loop)
+
+### 响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)
+
+> 响应中断是如何实现的？
+
+```
+public final void acquireInterruptibly(int arg) throws InterruptedException {
+    if (Thread.interrupted()) // 此处响应中断
+        throw new InterruptedException();
+    if (!tryAcquire(arg))
+        doAcquireInterruptibly(arg);
+}
+
+// 阻塞中响应中断
+private void doAcquireInterruptibly(int arg) throws InterruptedException {
+    final Node node = addWaiter(Node.EXCLUSIVE);
+    boolean failed = true;
+    try {
+        for (;;) {
+            final Node p = node.predecessor();
+            if (p == head && tryAcquire(arg)) {
+                setHead(node);
+                p.next = null; // help GC
+                failed = false;
+                return;
+            }
+            if (shouldParkAfterFailedAcquire(p, node) &&
+                parkAndCheckInterrupt())
+                throw new InterruptedException(); // 此处响应中断
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+```
 
 ### 共享式·同步状态获取与释放
 
@@ -206,13 +245,7 @@ for (;;) {
 }
 ```
 
-与独占式的区别：
-
-独占式中获取锁的方法，返回值是true false（互斥的）
-
-共享式中获取锁的方法，返回值&gt;=0表示获取到锁
-
-#### 超时·可中断·独占式·同步状态获取与释放
+#### 超时·响应中断·独占式·同步状态获取与释放
 
 1. 在自旋阻塞过程中，若获取锁成功，返回
 2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
