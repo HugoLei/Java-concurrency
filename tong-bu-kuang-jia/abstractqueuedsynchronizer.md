@@ -171,43 +171,6 @@ protected boolean tryAcquire(int arg)
 
 独占模式下，阻塞中的线程在做什么？参见[队列中的线程在做什么？](#dead-loop)
 
-### 响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)
-
-> 响应中断是如何实现的？方法入口+阻塞中
-
-```
-// 方法入口处响应中断
-public final void acquireInterruptibly(int arg) throws InterruptedException {
-    if (Thread.interrupted()) // 此处响应中断
-        throw new InterruptedException();
-    if (!tryAcquire(arg))
-        doAcquireInterruptibly(arg);
-}
-
-// 阻塞中响应中断
-private void doAcquireInterruptibly(int arg) throws InterruptedException {
-    final Node node = addWaiter(Node.EXCLUSIVE);
-    boolean failed = true;
-    try {
-        for (;;) {
-            final Node p = node.predecessor();
-            if (p == head && tryAcquire(arg)) {
-                setHead(node);
-                p.next = null; // help GC
-                failed = false;
-                return;
-            }
-            if (shouldParkAfterFailedAcquire(p, node) &&
-                parkAndCheckInterrupt())
-                throw new InterruptedException(); // 此处响应中断
-        }
-    } finally {
-        if (failed)
-            cancelAcquire(node);
-    }
-}
-```
-
 ### 共享式·同步状态获取与释放
 
 > 同时支持若干线程访问
@@ -246,14 +209,55 @@ for (;;) {
 }
 ```
 
-#### 超时·响应中断·独占式·同步状态获取与释放
+### 关于响应中断
+
+> 以响应中断·独占式·同步状态获取acquireInterruptibly\(int arg\)为例
+
+> 响应中断是如何实现的？方法入口+阻塞中
+>
+> 其他同步模式中响应中断的方式与此类似
+
+```
+// 方法入口处响应中断
+public final void acquireInterruptibly(int arg) throws InterruptedException {
+    if (Thread.interrupted()) // 此处响应中断
+        throw new InterruptedException();
+    if (!tryAcquire(arg))
+        doAcquireInterruptibly(arg);
+}
+
+// 阻塞中响应中断
+private void doAcquireInterruptibly(int arg) throws InterruptedException {
+    final Node node = addWaiter(Node.EXCLUSIVE);
+    boolean failed = true;
+    try {
+        for (;;) {
+            final Node p = node.predecessor();
+            if (p == head && tryAcquire(arg)) {
+                setHead(node);
+                p.next = null; // help GC
+                failed = false;
+                return;
+            }
+            if (shouldParkAfterFailedAcquire(p, node) &&
+                parkAndCheckInterrupt())
+                throw new InterruptedException(); // 此处响应中断
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+```
+
+### 超时·响应中断·独占式·同步状态获取tryAcquireNanos\(arg, timeout\)
 
 1. 在自旋阻塞过程中，若获取锁成功，返回
 2. 若失败，判断超时时间（nanosTimeout  &lt; 0），超时则返回
 3. 更新超时时间（nanosTimeout -= now - lastTime，超时时间不断缩小）
 4. 如果线程被interrupt，抛出中断异常
 
-> 图片
+### 
 
 
 
