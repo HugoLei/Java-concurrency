@@ -1,7 +1,7 @@
 # 基于AQS的Lock
 
+## interface Lock
 Lock接口提供了锁功能。
-interface Lock
 * void lock() // 未获取到锁时会阻塞
 * void lockInterruptibly() throws InterruptedException
 * boolean tryLock() // 非阻塞式获取锁，无论成功失败直接返回
@@ -13,7 +13,6 @@ interface Lock
 
 * Lock对锁的使用者提供公共接口
 * AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
-
 
 
 # TwinsLock
