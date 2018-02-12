@@ -10,6 +10,7 @@ http://download.java.net/openjdk/jdk8/
 6. 《Effective Java》，Joshua Bloch 著
 7. 《Java核心技术 卷I》，Cay S. Horstmann，Gary Cornell 著
 8. 《现代操作系统》，Andrew S. Tanenbaum，Herbert Bos 著
+9. 《深入理解计算机系统》，Randal E. Bryant 著
 
 
 # 要修改的问题
