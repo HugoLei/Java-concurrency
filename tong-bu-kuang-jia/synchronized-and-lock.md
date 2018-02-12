@@ -9,23 +9,31 @@ Lock接口提供了锁功能。
 * Condition newCondition() // 获取针对某种条件的等待队列
 * void unlock()
 
-### Lock + AbstractQueuedSynchronized
+## Lock + AbstractQueuedSynchronized
 
 * Lock对锁的使用者提供公共接口
-* AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
+* AQS对锁的开发者提供了锁的语义实现
 
+## 如何实现基于AQS的Lock呢
 
-# TwinsLock
+### 以TwinsLock为例
 
+#### 要实现的同步规则
 该锁要实现的同步规则：在同一时刻，只允许至多两个线程同时访问，超过两个线程的访问将被阻塞。
 
-### 独占 or 共享？
+#### 独占 or 共享？
 
 同一时刻支持多个线程访问，显然是共享的。
 
+#### 同步状态的设计
+
+同步状态state变化：合法值为0，1，2，初始为2，当一个线程获取，status减1，当线程释放，status+1
+
+
 * 使用模板方法acquireShared\(int arg\)等share相关方法
 * 重写tryAcquireShared\(int arg\)方法
-* state变化：合法值为0，1，2，初始为2，当一个线程获取，status减1，当线程释放，status+1
+
+# 几种重要的同步规则
 
 # 重入锁
 
