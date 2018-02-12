@@ -15,7 +15,7 @@
 * [Java & JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
-  * [unsafe](jvm/unsafe.md)
+  * [native](jvm/unsafe.md)
   * [class文件](classwen-jian.md)
   * [&lt;clinit&gt;与&lt;init&gt;](bian-yi/clinit4e0e3c-init.md)
   * [原子操作类](bian-yi/yuan-zi-cao-zuo-lei.md)

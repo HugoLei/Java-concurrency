@@ -10,15 +10,12 @@ Lock接口提供了锁功能。
 可中断的锁：在获取锁的过程中或在同步队列中，可响应中断
 
 超时获取锁：如果线程在超时时间内没有获取到锁，则返回
+### Lock + AbstractQueuedSynchronized
 
-# 如何实现一个Lock
+* Lock对锁的使用者提供公共接口
+* AbstractQueuedSynchronized对锁的开发者提供了锁的语义实现
 
-* 需要一个队列来维护等待线程
-* 需要同步访问锁的状态
 
-是不是看着很麻烦？
-
-所以Java并发包提供了队列同步器AbstractQueuedSynchronized来支持锁的开发。
 
 # TwinsLock
 
