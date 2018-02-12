@@ -2,6 +2,8 @@
 
 关于Java并发
 
+![](/assets/framework.png)
+
 本文档将从5个层面介绍Java的并发编程：
 
 1. 线程池
