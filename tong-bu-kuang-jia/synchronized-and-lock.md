@@ -36,11 +36,14 @@ Lock接口提供了锁功能。
 
 
 ```
+/*
+* Lock对锁的使用者提供公共接口
+* AQS对锁的开发者提供了锁的语义实现
+*/
 public class TwinsLock implements Lock {
    /*
    * 通常将AQS封装到锁的静态内部类中
    * 锁的语义实现交由静态内部类来完成（最终是AQS）
-   * 锁对外提供的方法最终都交由静态内部类来完成
    */
    private final Sync sync = new Sync(2);
    
@@ -50,7 +53,7 @@ public class TwinsLock implements Lock {
          if (count < 0) {
             throw new IllegalArgumentException("count must large than zero.");
          }
-         setState(count);
+         setState(count); // AQS#setState
       }
       
       // 重写AQS#tryAcquireShared
@@ -77,6 +80,9 @@ public class TwinsLock implements Lock {
          }
       }
       
+      /*
+      * 锁对外提供的功能，最终都交由静态内部类实例来完成
+      */
       public void lock() {
          sync.acquireShare(1);
       }
