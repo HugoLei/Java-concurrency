@@ -9,6 +9,7 @@ http://download.java.net/openjdk/jdk8/
 5. 《Java多线程编程核心技术》，高洪岩 著
 6. 《Effective Java》，Joshua Bloch 著
 7. 《Java核心技术 卷I》，Cay S. Horstmann，Gary Cornell 著
+8. 《现代操作系统》，Andrew S. Tanenbaum，Herbert Bos 著
 
 
 # 要修改的问题
