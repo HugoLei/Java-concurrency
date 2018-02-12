@@ -77,6 +77,8 @@ public class TwinsLock implements Lock {
       public void unlock() {
          sync.releaseShared(1);     
       }
+      
+      // 其他略
    }   
 }
 ```
