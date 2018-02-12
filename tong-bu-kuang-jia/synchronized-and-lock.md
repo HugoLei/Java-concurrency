@@ -1,15 +1,14 @@
 # 基于AQS的Lock
 
 Lock接口提供了锁功能。
+interface Lock
+* void lock() // 未获取到锁时会阻塞
+* void lockInterruptibly() throws InterruptedException
+* boolean tryLock() // 非阻塞式获取锁，无论成功失败直接返回
+* boolean tryLock(long time, TimeUnit unit) throws InterruptedException
+* Condition newCondition() // 获取针对某种条件的等待队列
+* void unlock()
 
-|  | 使用便捷性 | 灵活性 | 可中断的锁 | 超时获取锁 | 互斥/共享 | 阻塞 |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| Synchronized | 隐式获取/释放锁，代码简洁 | 固化，自动执行 | No | No | 只互斥 | 阻塞 |
-| Lock | 显示获取/释放锁，注意编码技巧 | 灵活，手动控制 | Yes | Yes | 可互斥，可共享 | 可非阻塞 |
-
-可中断的锁：在获取锁的过程中或在同步队列中，可响应中断
-
-超时获取锁：如果线程在超时时间内没有获取到锁，则返回
 ### Lock + AbstractQueuedSynchronized
 
 * Lock对锁的使用者提供公共接口
