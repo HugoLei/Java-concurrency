@@ -101,6 +101,7 @@ public class TwinsLock implements Lock {
 * 用静态内部类封装AQS
    * 为啥？？？
 * 对外提供的锁功能，最终都由AQS实现
+* 从语义上来讲，tryXXX类方法不应该以阻塞的方式实现，参考Lock.tryLock()的定义，改为非阻塞试试
 
 
 # 几种重要的同步规则
