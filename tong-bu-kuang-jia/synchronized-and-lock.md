@@ -52,6 +52,7 @@ public class TwinsLock implements Lock {
          for (;;) {
             int current = getState(); // AQS#getState()
             int newCount = current - reduceCount;
+            
             // AQS#compareAndSetState()
             if (newCount < 0 || compareAndSetState(current, newCount)) { 
                return newCount;
