@@ -1,13 +1,14 @@
 # 项目基本信息
 
 参考：
-1. 查看native方法对应的源码（从OpenJDK里看）
+1. JDK 1.8 source code
+2. 查看native方法对应的源码（从OpenJDK里看）
 http://download.java.net/openjdk/jdk8/
-2. 《Java并发编程的艺术》，方腾飞，魏鹏，程晓明 著
-3. 《解密Java虚拟机》，封亚飞 著
-4. 《Java多线程编程核心技术》，高洪岩 著
-5. 《Effective Java》，Joshua Bloch 著
-6. 《Java核心技术 卷I》，Cay S. Horstmann，Gary Cornell 著
+3. 《Java并发编程的艺术》，方腾飞，魏鹏，程晓明 著
+4. 《解密Java虚拟机》，封亚飞 著
+5. 《Java多线程编程核心技术》，高洪岩 著
+6. 《Effective Java》，Joshua Bloch 著
+7. 《Java核心技术 卷I》，Cay S. Horstmann，Gary Cornell 著
 
 
 # 要修改的问题
