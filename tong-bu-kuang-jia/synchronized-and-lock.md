@@ -96,6 +96,11 @@ public class TwinsLock implements Lock {
 }
 ```
 
+#### 上述代码分析
+* 实现Lock接口
+* 用静态内部类封装AQS
+   * 为啥？？？
+* 对外提供的锁功能，最终都由AQS实现
 
 
 # 几种重要的同步规则
