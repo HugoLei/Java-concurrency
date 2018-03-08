@@ -3,6 +3,7 @@
 * [项目笔记](xiang-mu-bi-ji.md)
 * [Introduction](README.md)
 * [线程池](xian-cheng-chi.md)
+  * 线程池模型
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
@@ -10,7 +11,7 @@
   * [同步框架AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
   * [基于AQS的Lock](tong-bu-kuang-jia/synchronized-and-lock.md)
   * [Synchronized](tong-bu-kuang-jia/synchronized.md)
-  * 等待/通知模型
+  * [等待/通知模型](tong-bu-kuang-jia/deng-5f85-tong-zhi-mo-xing.md)
   * [LockSupport](tong-bu-kuang-jia/locksupport.md)
 * [Java & 编译器 & JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
