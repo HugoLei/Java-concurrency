@@ -39,10 +39,10 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 ```
 public void put(E e) throws InterruptedException {
         checkNotNull(e);
-        final ReentrantLock lock = this.lock;
+        final ReentrantLock lock = this.lock; // 同步控制
         lock.lockInterruptibly();
         try {
-            while (count == items.length)
+            while (count == items.length) // 阻塞控制
                 notFull.await();
             enqueue(e);
         } finally {
