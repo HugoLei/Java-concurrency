@@ -36,8 +36,9 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 # 阻塞队列两大问题：同步 + 阻塞
 
 ### 同步的实现原理
+ReentrantLock
 
-参见[AbstractQueuedSynchronizer](/tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
+ReentrantLock的实现参见[AbstractQueuedSynchronizer](/tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
 
 ### 阻塞的实现原理
 
