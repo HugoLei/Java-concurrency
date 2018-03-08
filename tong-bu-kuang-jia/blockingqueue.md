@@ -35,6 +35,23 @@ DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多
 
 # 阻塞队列两大问题：同步 + 阻塞
 
+以ArrayBlockingQueue的put方法为例
+```
+public void put(E e) throws InterruptedException {
+        checkNotNull(e);
+        final ReentrantLock lock = this.lock;
+        lock.lockInterruptibly();
+        try {
+            while (count == items.length)
+                notFull.await();
+            enqueue(e);
+        } finally {
+            lock.unlock();
+        }
+    }
+```
+
+
 ### 同步的实现原理
 ReentrantLock
 
