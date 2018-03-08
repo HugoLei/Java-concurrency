@@ -1,1 +1,1 @@
-POSIX是个协议
+POSIX是个协议Portable Operating System Interface of UNIX
