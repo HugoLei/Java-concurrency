@@ -23,6 +23,7 @@
 * [操作系统](cao-zuo-xi-tong.md)
   * [POSIX](cao-zuo-xi-tong/posix.md)
   * [用户态 & 内核态](cao-zuo-xi-tong/yong-hu-tai-and-nei-he-tai.md)
+  * [中断机制](cao-zuo-xi-tong/zhong-duan-ji-zhi.md)
 * [计算机体系结构](ji-suan-ji-ti-xi-jie-gou.md)
   * [多核CPU](ji-suan-ji-ti-xi-jie-gou/duo-he-cpu.md)
   * [CPU、高速缓存、主存](ji-suan-ji-ti-xi-jie-gou/cpu.md)
