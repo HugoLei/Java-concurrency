@@ -19,7 +19,6 @@ http://download.java.net/openjdk/jdk8/
    2. 同步控制
 
 
-
 1. 前沿里的5个层次需要修改，因为线程池和同步控制是同一个层的
 2. 同步控制
    1. Synchronized和Lock是同一个级别，一个是隐式的同步框架，一个是显示的同步框架
