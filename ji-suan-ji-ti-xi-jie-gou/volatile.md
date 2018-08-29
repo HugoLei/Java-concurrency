@@ -17,4 +17,4 @@ stop = true;
 2. 使用volatile关键字的话，当线程2进行修改时，会导致线程1的工作内存中缓存变量stop的缓存行无效（反映到硬件层的话，就是CPU的L1或者L2缓存中对应的缓存行无效，这个步骤由硬件支持）；
 3. 由于线程1的工作内存中缓存变量stop的缓存行无效，所以线程1再次读取变量stop的值时会去主存读取。
 # Volatile 原理
-参见[](/ji-suan-ji-ti-xi-jie-gou/cpu.md "CPU、高速缓存、主存")
+参见[CPU、高速缓存、主存](/ji-suan-ji-ti-xi-jie-gou/cpu.md)
