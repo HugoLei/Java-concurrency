@@ -15,7 +15,8 @@
   * [LockSupport](tong-bu-kuang-jia/locksupport.md)
 * [Java & 编译器 & JVM](jvm.md)
   * [关于并发](jvm/guan-yu-bing-fa.md)
-  * [Java 内存模型](jvm/java-nei-cun-mo-xing.md)
+  * [Java 多线程内存模型](jvm/java-nei-cun-mo-xing.md)
+  * [volatile语义 & 原理](ji-suan-ji-ti-xi-jie-gou/volatile.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
   * [native](jvm/unsafe.md)
@@ -30,7 +31,6 @@
   * [多核CPU](ji-suan-ji-ti-xi-jie-gou/duo-he-cpu.md)
   * [CPU、高速缓存、主存](ji-suan-ji-ti-xi-jie-gou/cpu.md)
   * [CPU 缓存一致性](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
-  * [volatile语义 & 原理](ji-suan-ji-ti-xi-jie-gou/volatile.md)
   * [CAS原理](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
   * [局部性原理](ji-suan-ji-ti-xi-jie-gou/ju-bu-xing-yuan-li.md)
 
