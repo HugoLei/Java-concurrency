@@ -15,6 +15,7 @@
   * [LockSupport](tong-bu-kuang-jia/locksupport.md)
 * [Java & 编译器 & JVM](jvm.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
+  * [Java 内存模型](jvm/java-nei-cun-mo-xing.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
   * [native](jvm/unsafe.md)
   * [class文件](classwen-jian.md)
