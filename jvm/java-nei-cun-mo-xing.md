@@ -1,1 +1,1 @@
-![单独](/assets/Java 内存模型.png)
+![](/assets/Java 内存模型.png)
