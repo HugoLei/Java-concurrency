@@ -16,7 +16,7 @@
 * [Java & 编译器 & JVM](jvm.md)
   * [关于并发](jvm/guan-yu-bing-fa.md)
   * [Java 多线程内存模型](jvm/java-nei-cun-mo-xing.md)
-  * [volatile语义 & 原理](ji-suan-ji-ti-xi-jie-gou/volatile.md)
+  * [volatile](ji-suan-ji-ti-xi-jie-gou/volatile.md)
   * [对象内存模型](jvm/dui-xiang-nei-cun-mo-xing.md)
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
   * [native](jvm/unsafe.md)
