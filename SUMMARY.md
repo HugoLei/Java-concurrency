@@ -33,4 +33,5 @@
   * [CPU 高速缓存一致性问题](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
   * [CAS原理](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
   * [局部性原理](ji-suan-ji-ti-xi-jie-gou/ju-bu-xing-yuan-li.md)
+  * [参考 MESI 协议](ji-suan-ji-ti-xi-jie-gou/can-kao-mesi-xie-yi.md)
 
