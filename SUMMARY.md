@@ -30,7 +30,7 @@
 * [计算机体系结构](ji-suan-ji-ti-xi-jie-gou.md)
   * [多核CPU](ji-suan-ji-ti-xi-jie-gou/duo-he-cpu.md)
   * [CPU、高速缓存、缓存行](ji-suan-ji-ti-xi-jie-gou/cpu.md)
-  * [CPU 缓存一致性](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
+  * [CPU 高速缓存一致性问题](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
   * [CAS原理](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
   * [局部性原理](ji-suan-ji-ti-xi-jie-gou/ju-bu-xing-yuan-li.md)
 
