@@ -20,6 +20,7 @@ stop = true;
 # 对 Volatile 的理解（待进一步验证）
 > Volatile 涉及两个层次，一层是 Java 多线程内存模型，一层是多 CPU 高速缓存一致性
 
+![](/assets/Volatile 多线程模型.png)
 ## Java多线程内存模型
 参考[Java多线程内存模型](/jvm/java-nei-cun-mo-xing.md)
 可知共享变量实际是被拷贝到了线程的本地内存中。
