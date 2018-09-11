@@ -3,7 +3,7 @@
 * [项目笔记](xiang-mu-bi-ji.md)
 * [Introduction](README.md)
 * [线程池](xian-cheng-chi.md)
-  * 线程池模型
+  * [线程池模型](xian-cheng-chi/xian-cheng-chi-mo-xing.md)
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
