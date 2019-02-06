@@ -2,6 +2,7 @@
 
 * [项目笔记](xiang-mu-bi-ji.md)
 * [Introduction](README.md)
+* [互斥 & 同步](hu-chi-and-tong-bu.md)
 * [线程池](xian-cheng-chi.md)
   * [线程池模型](xian-cheng-chi/xian-cheng-chi-mo-xing.md)
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
