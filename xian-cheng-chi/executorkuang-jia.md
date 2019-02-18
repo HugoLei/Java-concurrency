@@ -98,7 +98,8 @@ schedule(Runnable command,long delay,TimeUnit unit)
 ```
 scheduleAtFixedRate(Runnable command,long initialDelay,long period, TimeUnit unit)
 ```
-
+* initialDelay: 初始延迟
+* period：周期
 
 
 
