@@ -7,6 +7,7 @@
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
   * [Fork & Join框架](xian-cheng-chi/fork-and-joinkuang-jia.md)
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
+  * [Thread](xian-cheng-chi/thread.md)
 * [互斥 & 同步](hu-chi-and-tong-bu.md)
 * [关于锁](guan-yu-suo.md)
 * [同步控制](tong-bu-kuang-jia.md)
