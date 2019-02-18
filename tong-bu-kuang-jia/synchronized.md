@@ -1,4 +1,4 @@
-[top]
+
 # synchronized 的实现原理
 > synchronized 锁的是一个对象
 
