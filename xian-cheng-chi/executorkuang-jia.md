@@ -31,6 +31,9 @@ ScheduledThreadPoolExecutor的workQueue使用的是DelayedWorkQueue
 
 
 
+
+
+
 任务管理器核心参数：
 
 * corePool：核心线程池大小
