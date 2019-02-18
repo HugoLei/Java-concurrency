@@ -26,7 +26,7 @@ Executor框架三大模块
 * maximumPool：最大线程池的大小
 * workQueue：暂时保存任务的工作队列
 * keepAliveTime：多余的空闲线程等待新任务的最长时间
-* handler：RejectedExecutionHandler，饱和时如何拒绝新的认
+* handler：RejectedExecutionHandler，饱和时如何拒绝新的任务
 * allowCoreThreadTimeOut: 
 
 
