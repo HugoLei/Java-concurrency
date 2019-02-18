@@ -31,7 +31,7 @@ Java中的7个阻塞队列
 DelayQueue：元素必须实现Delayed接口，在创建元素时可以指定多久才能从队列中获取当前元素。
 
 * 基于DelayQueue的缓存系统：元素自定有效期，另外使用一个线程循环查询DelayQueue，一旦能查出来，则表示缓存到期了。
-* 基于DelayQueue的定时任务调度：将周期任务放入DelayQueue中，一旦从队列中获取到元素，则执行任务
+* 基于DelayQueue的定时任务调度：将周期任务放入DelayQueue中，一旦从队列中获取到元素，则执行任务（定时任务一般用 ScheduledThreadPoolExecutor）
 
 # 阻塞队列两大问题：同步 + 阻塞
 
