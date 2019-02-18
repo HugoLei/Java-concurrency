@@ -9,6 +9,11 @@ Synchronized隐式地实现同步控制，对开发者透明。
 |静态同步方法|Class 对象|
 |同步代码块|synchronized(参数对象)|
 
+## Synchronized 实现互斥
+直接使用上述三种形式之一
+## Synchronized 实现等待/通知模型
+上述三种形式之一 + object.wait() object.notify() object.notifyAll()
+
 # 如何锁一个对象？
 锁的根本原理就是有个状态标识，那么锁对象用的状态标识存储在什么地方？在 Java 对象头中
 
