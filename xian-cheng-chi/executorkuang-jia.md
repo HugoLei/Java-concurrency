@@ -71,6 +71,16 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 2. SynchronousQueue：无容量，提交的任务必须等一个线程来处理
 2.1 因为CachedThreadPool的maximumPool是无界的，因此可能出现创建过多的线程，导致耗尽CPU和内存资源
 
+##### Pool 中 Thread 数量的变化
+
+
+```
+默认 core Thread 不会 timeout
+```
+
+
+![](/assets/IMG_4997.jpg)
+
 #### ScheduledThreadPoolExecutor
 
 | 线程池 | corePool | maximumPool | BlockingQueue | keepAliveTime |
