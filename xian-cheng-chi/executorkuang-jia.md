@@ -83,6 +83,12 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 
 #### ScheduledThreadPoolExecutor
 
+
+```
+可以用来做定时任务
+```
+
+
 | 线程池 | corePool | maximumPool | BlockingQueue | keepAliveTime |
 | :--- | :--- | :--- | :--- | :--- |
 | ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
