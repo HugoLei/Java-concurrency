@@ -37,7 +37,7 @@ Executor框架三大模块
 3. 如果工作队列已满，且`正在运行的`线程数少于maximumPool，则创建线程
 4. 若`正在运行的`线程数大于等于maximumPool，则执行拒绝新任务的策略
 5. 超过 coreSize的空闲线程，等待新任务超时后，结束线程
-6. core size 线程默认不会timeout
+6. `core size 线程默认不会timeout`
 
 
 ### 两者的区别：
