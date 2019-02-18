@@ -20,6 +20,7 @@ Executor框架三大模块
 
 1. ThreadPoolExecutor
 2. ScheduledThreadPoolExecutor
+区别
 
 
 ScheduledThreadPoolExecutor extends ThreadPoolExecutor
