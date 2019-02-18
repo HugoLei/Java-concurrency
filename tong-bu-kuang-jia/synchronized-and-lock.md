@@ -2,7 +2,7 @@
 
 ## interface Lock
 Lock接口提供了锁功能。
-* void lock() // 未获取到锁时会阻塞
+* void lock() // 阻塞式获取锁
 * void lockInterruptibly() throws InterruptedException
 * boolean tryLock() // 非阻塞式获取锁，无论成功失败直接返回
 * boolean tryLock(long time, TimeUnit unit) throws InterruptedException
