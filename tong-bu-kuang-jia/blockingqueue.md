@@ -59,7 +59,7 @@ ReentrantLock的实现参见[AbstractQueuedSynchronizer](/tong-bu-kuang-jia/abst
 
 ### 阻塞的实现原理
 
-> 等待通知模式
+> while 自旋 + 等待通知模式
 
 例如：ArrayBlockingQueue使用Condition
 
