@@ -21,6 +21,15 @@ Executor框架三大模块
 1. ThreadPoolExecutor
 2. ScheduledThreadPoolExecutor
 
+
+```
+ScheduledThreadPoolExecutor extends ThreadPoolExecutor
+最主要的区别是：workQueue 支持 schedule
+ScheduledThreadPoolExecutor的workQueue使用的是DelayedWorkQueue
+```
+
+
+
 任务管理器核心参数：
 
 * corePool：核心线程池大小
