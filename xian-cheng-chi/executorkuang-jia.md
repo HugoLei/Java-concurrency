@@ -21,6 +21,13 @@ Executor框架三大模块
 1. ThreadPoolExecutor
 2. ScheduledThreadPoolExecutor
 
+
+```
+ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
+```
+
+
+
 任务管理器核心参数：
 * corePool：核心线程池大小
 * maximumPool：最大线程池的大小
