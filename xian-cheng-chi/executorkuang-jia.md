@@ -27,7 +27,7 @@ Executor框架三大模块
 * workQueue：暂时保存任务的工作队列
 * keepAliveTime：多余的空闲线程等待新任务的最长时间
 * handler：RejectedExecutionHandler，饱和时如何拒绝新的任务
-* allowCoreThreadTimeOut: 
+* allowCoreThreadTimeOut: default false，默认 core thread 不会 timeout
 
 
 管理模式：
