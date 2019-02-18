@@ -1,4 +1,4 @@
-
+Synchronized隐式地实现互斥，对开发者透明。
 # synchronized 的实现原理
 > synchronized 锁的是一个对象
 
