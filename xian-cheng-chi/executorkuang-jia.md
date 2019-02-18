@@ -29,12 +29,12 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 
 
 任务管理器核心参数：
-* corePool：核心线程池大小
-* maximumPool：最大线程池的大小
-* workQueue：暂时保存任务的工作队列
-* keepAliveTime：多余的空闲线程等待新任务的最长时间
-* handler：RejectedExecutionHandler，饱和时如何拒绝新的任务
-* allowCoreThreadTimeOut: default false，默认 core thread 不会 timeout
+* `corePool`：核心线程池大小
+* `maximumPool`：最大线程池的大小
+* `workQueue`：暂时保存任务的工作队列
+* `keepAliveTime`：多余的空闲线程等待新任务的最长时间
+* `handler`：RejectedExecutionHandler，饱和时如何拒绝新的任务
+* `allowCoreThreadTimeOut`: default false，默认 core thread 不会 timeout
 
 
 管理模式：
