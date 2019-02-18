@@ -67,9 +67,7 @@ BlockingQueue：用来存任务（而不是线程，不要跟线程的同步队�
 
 LinkedBlockingQueue：无界队列（大小为Integer.MAX\_VALUE）（因为可以一直将任务加入到队列中，所以maximumPool参数就无意义了）
 
-SynchronousQueue：无容量，提交的任务必须等一个线程来处理
-
-因为CachedThreadPool的maximumPool是无界的，因此可能出现创建过多的线程，导致耗尽CPU和内存资源
+SynchronousQueue：无容量，提交的任务必须等一个线程来处理（因为CachedThreadPool的maximumPool是无界的，因此可能出现创建过多的线程，导致耗尽CPU和内存资源）
 
 #### ScheduledThreadPoolExecutor
 
