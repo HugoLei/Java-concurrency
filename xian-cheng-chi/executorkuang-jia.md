@@ -26,7 +26,6 @@ ScheduledThreadPoolExecutor extends ThreadPoolExecutor
 最主要的区别是：workQueue 支持 schedule
 
 
-
 任务管理器核心参数：
 
 * corePool：核心线程池大小
