@@ -48,12 +48,6 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 6. `core size 线程默认不会timeout`
 
 
-### 两者的区别：
-
-ScheduledThreadPoolExecutor extends ThreadPoolExecutor
-
-
-
 通过工厂类Executors创建四大类线程池
 
 1. SingleThreadExecutor
