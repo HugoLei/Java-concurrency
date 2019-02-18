@@ -108,7 +108,6 @@ scheduleAtFixedRate(Runnable command,long initialDelay,long period, TimeUnit uni
 * period：周期
 
 
-
 Scheduled任务有三个属性：
 
 * time // 具体的执行时间
