@@ -73,6 +73,23 @@ while (count == items.length)
 enqueue(e);
 ```
 
+
+入队列后，通知等待notEmpty的线程
+```
+private void enqueue(E x) {
+        // assert lock.getHoldCount() == 1;
+        // assert items[putIndex] == null;
+        final Object[] items = this.items;
+        items[putIndex] = x;
+        if (++putIndex == items.length)
+            putIndex = 0;
+        count++;
+        notEmpty.signal();
+    }
+```
+
+
+
 # 多线程环境下的通知模式是什么？
 
 参见[Java线程间通信](/jvm/javaxian-cheng-jian-tong-xin.md)
