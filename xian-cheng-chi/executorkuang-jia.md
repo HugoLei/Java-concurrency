@@ -93,7 +93,14 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 schedule(Runnable command,long delay,TimeUnit unit)
 ```
 
-##### scheduleAtFixedRate()
+##### scheduleAtFixedRate() 固定周期执行
+
+
+```
+scheduleAtFixedRate(Runnable command,long initialDelay,long period, TimeUnit unit)
+```
+
+
 
 
 Scheduled任务有三个属性：
