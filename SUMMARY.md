@@ -9,6 +9,7 @@
   * [BlockingQueue](tong-bu-kuang-jia/blockingqueue.md)
   * [Thread](xian-cheng-chi/thread.md)
 * [互斥 & 同步](hu-chi-and-tong-bu.md)
+* [互斥控制](hu-chi-and-tong-bu/hu-chi-kong-zhi.md)
 * [关于锁](guan-yu-suo.md)
 * [同步控制](tong-bu-kuang-jia.md)
   * [同步框架AbstractQueuedSynchronizer](tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
