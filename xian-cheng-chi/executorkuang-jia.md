@@ -22,7 +22,7 @@ Executor框架三大模块
 2. ScheduledThreadPoolExecutor
 
 任务管理器核心参数：
-
+单独
 * corePool：核心线程池大小
 * maximumPool：最大线程池的大小
 * workQueue：暂时保存任务的工作队列
