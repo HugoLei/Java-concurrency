@@ -29,6 +29,7 @@ Executor框架三大模块
 * handler：RejectedExecutionHandler，饱和时如何拒绝新的认为
 * allowCoreThreadTimeOut: 
 
+
 管理模式：
 
 1. 如果`正在运行的`线程数少于corePool，则创建线程
