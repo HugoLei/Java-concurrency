@@ -87,12 +87,11 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 | :--- | :--- | :--- | :--- | :--- |
 | ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
 
-##### schedule()
+##### schedule() 延迟执行
 
 ```
 schedule(Runnable command,long delay,TimeUnit unit)
 ```
-
 
 ##### scheduleAtFixedRate()
 
