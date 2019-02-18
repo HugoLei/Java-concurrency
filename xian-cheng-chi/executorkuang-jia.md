@@ -21,12 +21,15 @@ Executor框架三大模块
 1. ThreadPoolExecutor
 2. ScheduledThreadPoolExecutor
 
-d
-
 ```
 ScheduledThreadPoolExecutor extends ThreadPoolExecutor
 最主要的区别是：workQueue 支持 schedule
-ScheduledThreadPoolExecutor的workQueue使用的是DelayedWorkQueue
+```
+
+d
+
+```
+dddd 
 ```
 
 
