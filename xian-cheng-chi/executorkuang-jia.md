@@ -87,6 +87,16 @@ ScheduledThreadPoolExecutor继承自ThreadPoolExecutor
 | :--- | :--- | :--- | :--- | :--- |
 | ScheduledThreadPoolExecutor | n | Integer.MAX\_VALUE | DelayedWorkQueue | 0 |
 
+##### schedule()
+
+```
+schedule(Runnable command,long delay,TimeUnit unit)
+```
+
+
+##### scheduleAtFixedRate()
+
+
 Scheduled任务有三个属性：
 
 * time // 具体的执行时间
