@@ -38,6 +38,7 @@ Executor框架三大模块
 4. 若`正在运行的`线程数大于等于maximumPool，则执行拒绝新任务的策略
 5. 多余的空闲线程，等待新任务超时后，结束线程
 
+
 两者的区别：
 ScheduledThreadPoolExecutor extends ThreadPoolExecutor
 
