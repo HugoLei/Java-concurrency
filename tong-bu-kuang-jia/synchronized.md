@@ -1,5 +1,11 @@
 Synchronized隐式地实现同步控制，对开发者透明。
 
+Java SE 1.6对 synchronized 进行了多种优化。
+1. 自旋
+2. 锁粗化
+3. 锁消除
+4. 偏向锁 - 轻量级锁 - 重量级锁
+
 # synchronized 的实现原理
 > synchronized 锁的是一个对象
 
