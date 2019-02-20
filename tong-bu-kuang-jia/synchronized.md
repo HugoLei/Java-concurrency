@@ -39,8 +39,10 @@ Java SE 1.6对 synchronized 进行了多种优化。
 1. 偏向锁：ThreadId 放在 Mark word 里
 2. 轻量级锁：Mark word 指向线程的 Lock record，在 Lock record 里记录 owner 为拥有锁的线程
 3. 重量级锁：放在 monitor 中，直接对标操作系统的 mutex（未确认）
+
 ## Synchronized 实现互斥
 直接使用上述三种形式之一
+
 ## Synchronized 实现等待/通知模型
 1. 上述三种形式之一 
 2. object.wait() object.notify() object.notifyAll()
