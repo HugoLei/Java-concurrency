@@ -19,7 +19,7 @@ Java SE 1.6对 synchronized 进行了多种优化。
 |静态同步方法|Class 对象|
 |同步代码块|synchronized(参数对象)|
 
-# 锁存在哪里（对象头的 Mark word 字段里）
+# 锁存在哪里（对象头的 Mark word 里）
 ![](/assets/Mark word.png)
 
 ## Synchronized 实现互斥
