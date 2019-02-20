@@ -1,5 +1,8 @@
 Synchronized隐式地实现同步控制，对开发者透明。
 
+原理说明
+使用示例
+
 Java SE 1.6对 synchronized 进行了多种优化。
 1. 自旋
 2. 锁粗化
