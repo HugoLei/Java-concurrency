@@ -11,14 +11,16 @@ Java SE 1.6对 synchronized 进行了多种优化。
 
 > 下面根据锁的四大问题分别进行说明。[《关于锁》](/guan-yu-suo.md)
 
-# synchronized 的实现原理
-> synchronized 锁的是一个对象
+# synchronized 锁的是一个对象
 
 | 锁的形式|锁定的对象|
 |:--|:--|
 |普通同步方法|当前实例对象|
 |静态同步方法|Class 对象|
 |同步代码块|synchronized(参数对象)|
+
+# 锁存在哪里
+
 
 ## Synchronized 实现互斥
 直接使用上述三种形式之一
