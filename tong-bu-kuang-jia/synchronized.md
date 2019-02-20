@@ -72,4 +72,4 @@ Java SE 1.6中锁有4种状态，级别从低到高依次是：无锁状态，�
 超时获取锁：如果线程在超时时间内没有获取到锁，则返回
 
 # 参考
-https://www.jianshu.com/p/36eedeb3f912
+《浅谈偏向锁、轻量级锁、重量级锁》https://www.jianshu.com/p/36eedeb3f912
