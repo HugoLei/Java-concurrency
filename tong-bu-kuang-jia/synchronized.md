@@ -13,10 +13,13 @@ Java SE 1.6对 synchronized 进行了多种优化。
 > 下面根据锁的四大问题分别进行说明。[《关于锁》](/guan-yu-suo.md)
 
 # synchronized 与重量级锁
+> synchronized 重量级锁，依赖 OS 的 Mutex 实现。
+
+
 ## 逻辑推理
 > 如果 synchronized 使用重量级锁，会发生什么？
 
-synchronized 重量级锁，依赖 OS 的 Mutex 实现。
+
 当线程运行至临界区时，从用户态切换到内核态，所有线程挂起，由 OS 来调度，谁执行代码，谁进入阻塞。
 > 有什么问题？运行效率低
 
