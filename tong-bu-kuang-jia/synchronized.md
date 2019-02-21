@@ -1,6 +1,7 @@
 Synchronized隐式地实现同步控制，对开发者透明。
 
-原理说明
+逻辑推理
+先说结论，再举证
 使用示例
 
 Java SE 1.6对 synchronized 进行了多种优化。
@@ -10,6 +11,22 @@ Java SE 1.6对 synchronized 进行了多种优化。
 4. 偏向锁 - 轻量级锁 - 重量级锁
 
 > 下面根据锁的四大问题分别进行说明。[《关于锁》](/guan-yu-suo.md)
+
+# synchronized 与重量级锁
+## 逻辑推理
+> 如果 synchronized 使用重量级锁，会发生什么？
+
+synchronized 重量级锁，依赖 OS 的 Mutex 实现。
+当线程运行至临界区时，从用户态切换到内核态，所有线程挂起，由 OS 来调度，谁执行代码，谁进入阻塞。
+> 有什么问题？运行效率低
+
+* 进入临界区时，总会伴随着用户态到内核态的切换（切换代价高，因为要保存现场，传递参数等）
+* 线程直接阻塞（先挂起，后唤醒），这个状态切换代价高
+
+## 实现方式
+synchronized 代码块的开始处织入 monitorenter
+synchronized 代码块的结束处织入 monitorexit
+线程运行至 monitorenter 时，查找对象头里的重量级锁的指针，后续就进入 OS 的控制范围内。
 
 # synchronized 锁的是一个对象
 
