@@ -1,5 +1,7 @@
 # Java Concurrency
 
+> 已经有那么多书讲这个东西，该领域已经研究得很透彻了，那我写这个文档的意义是什么？
+
 关于Java并发
 
 ![](/assets/framework.png)
