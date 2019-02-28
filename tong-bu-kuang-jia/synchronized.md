@@ -1,4 +1,4 @@
-[topic]
+[TOC]
 Synchronized隐式地实现同步控制，对开发者透明。
 
 写作思路：
