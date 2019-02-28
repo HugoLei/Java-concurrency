@@ -26,7 +26,7 @@ Java SE 1.6对 synchronized 进行了多种优化。
 * 进入临界区时，总会伴随着用户态到内核态的切换（切换代价高，因为要保存现场，传递参数等）
 * 线程直接阻塞（先挂起，后唤醒），这个状态切换代价高
 
-## 实现方式
+## 重量级锁实现方式
 synchronized 代码块的开始处织入 monitorenter
 synchronized 代码块的结束处织入 monitorexit
 线程运行至 monitorenter 时，查找对象头里的重量级锁的指针，后续就进入 OS 的控制范围内。
