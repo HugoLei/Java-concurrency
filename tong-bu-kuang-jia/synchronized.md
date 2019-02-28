@@ -13,6 +13,32 @@ Java SE 1.6对 synchronized 进行了多种优化。
 3. 锁消除
 4. 偏向锁 - 轻量级锁 - 重量级锁
 
+
+# synchronized 锁的是一个对象
+
+| 锁的形式|锁定的对象|
+|:--|:--|
+|普通同步方法|当前实例对象|
+|静态同步方法|Class 对象|
+|同步代码块|synchronized(参数对象)|
+
+# 锁存在哪里（对象头的 Mark word 里）
+## Java 对象头
+在 JVM 中每个对象都有个`头`
+数组对象：JVM 用3个字宽 word 来存对象头
+非数组对象：JVM 用2个字宽 word 存对象头
+
+## 32位系统对象头说明（字宽 word 是32bit）
+|长度|内容|说明|
+|:--|:--|:--|
+|1字宽|Mark Word|hashcode 或锁信息等|
+|1字宽|Class Metadata Address|到对象类型数据的指针|
+|1字宽|Array Length|数组长度（如果是数组的话，否则没有这个字宽）|
+
+## Mark word 示例
+![](/assets/Mark word.png)
+
+
 > 下面根据锁的四大问题分别进行说明。[《关于锁》](/guan-yu-suo.md)
 
 # synchronized 与重量级锁
@@ -54,29 +80,6 @@ synchronized 代码块的结束处织入 monitorexit
 
 ![](/assets/轻量级锁+膨胀.png)
 
-# synchronized 锁的是一个对象
-
-| 锁的形式|锁定的对象|
-|:--|:--|
-|普通同步方法|当前实例对象|
-|静态同步方法|Class 对象|
-|同步代码块|synchronized(参数对象)|
-
-# 锁存在哪里（对象头的 Mark word 里）
-## Java 对象头
-在 JVM 中每个对象都有个`头`
-数组对象：JVM 用3个字宽 word 来存对象头
-非数组对象：JVM 用2个字宽 word 存对象头
-
-## 32位系统对象头说明（字宽 word 是32bit）
-|长度|内容|说明|
-|:--|:--|:--|
-|1字宽|Mark Word|hashcode 或锁信息等|
-|1字宽|Class Metadata Address|到对象类型数据的指针|
-|1字宽|Array Length|数组长度（如果是数组的话，否则没有这个字宽）|
-
-## Mark word 示例
-![](/assets/Mark word.png)
 
 # “谁拥有锁”这个信息存在哪里？
 1. 偏向锁：ThreadId 放在 Mark word 里
