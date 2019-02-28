@@ -85,6 +85,11 @@ synchronized 代码块的结束处织入 monitorexit
 
 ![](/assets/轻量级锁+膨胀.png)
 
+---
+
+# 优化轻量级锁，使用偏向锁
+
+
 
 # “谁拥有锁”这个信息存在哪里？
 1. 偏向锁：ThreadId 放在 Mark word 里
