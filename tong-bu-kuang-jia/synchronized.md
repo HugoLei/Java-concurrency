@@ -41,6 +41,8 @@ Java SE 1.6对 synchronized 进行了多种优化。
 
 > 下面根据锁的四大问题分别进行说明。[《关于锁》](/guan-yu-suo.md)
 
+---
+
 # synchronized 与重量级锁
 > synchronized 重量级锁，依赖 OS 的 Mutex 实现。
 
@@ -58,6 +60,8 @@ Java SE 1.6对 synchronized 进行了多种优化。
 synchronized 代码块的开始处织入 monitorenter
 synchronized 代码块的结束处织入 monitorexit
 线程运行至 monitorenter 时，查找对象头里的重量级锁的指针，后续就进入 OS 的控制范围内。
+
+---
 
 # 优化 synchronized，使用轻量级锁
 > 轻量级锁：先自旋，再进入重量级锁
