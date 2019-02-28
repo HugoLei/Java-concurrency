@@ -64,7 +64,7 @@ synchronized 代码块的结束处织入 monitorexit
 
 # 锁存在哪里（对象头的 Mark word 里）
 ## Java 对象头
-在 JVM 中每个对象都有个“头”
+在 JVM 中每个对象都有个`头`
 数组对象：JVM 用3个字宽 word 来存对象头
 非数组对象：JVM 用2个字宽 word 存对象头
 
