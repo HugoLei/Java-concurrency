@@ -13,6 +13,7 @@ Java SE 1.6对 synchronized 进行了多种优化。
 3. 锁消除
 4. 偏向锁 - 轻量级锁 - 重量级锁
 
+---
 
 # synchronized 锁的是一个对象
 
