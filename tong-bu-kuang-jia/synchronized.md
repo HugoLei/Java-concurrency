@@ -48,6 +48,9 @@ synchronized 代码块的结束处织入 monitorexit
 ## 轻量级锁实现方式
 
 ![](/assets/轻量级锁.png)
+> 如果关闭了 JVM 偏向锁，则默认从轻量级锁开始
+
+![](/assets/轻量级锁+膨胀.png)
 
 # synchronized 锁的是一个对象
 
