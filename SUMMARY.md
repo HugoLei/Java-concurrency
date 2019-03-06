@@ -41,4 +41,5 @@
   * [CAS-原子操作](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
   * [原子操作的原理](ji-suan-ji-ti-xi-jie-gou/lock-zhi-ling.md)
   * [CPU 指令执行顺序](ji-suan-ji-ti-xi-jie-gou/cpu-zhi-ling-zhi-xing-shun-xu.md)
+  * [Lock & volatile & CAS](ji-suan-ji-ti-xi-jie-gou/lock-and-volatile-and-cas.md)
 
