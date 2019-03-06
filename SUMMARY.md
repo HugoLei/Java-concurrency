@@ -36,7 +36,7 @@
   * [局部性原理](ji-suan-ji-ti-xi-jie-gou/ju-bu-xing-yuan-li.md)
   * [多核CPU](ji-suan-ji-ti-xi-jie-gou/duo-he-cpu.md)
   * [CPU、高速缓存、缓存行](ji-suan-ji-ti-xi-jie-gou/cpu.md)
-  * [CPU 高速缓存一致性问题](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
+  * [cache 不一致问题](ji-suan-ji-ti-xi-jie-gou/cpu-huan-cun-yi-zhi-xing.md)
   * [缓存 一致性协议——MESI 协议](ji-suan-ji-ti-xi-jie-gou/can-kao-mesi-xie-yi.md)
   * [CAS-原子操作](ji-suan-ji-ti-xi-jie-gou/casyuan-li.md)
   * [原子操作的原理](ji-suan-ji-ti-xi-jie-gou/lock-zhi-ling.md)

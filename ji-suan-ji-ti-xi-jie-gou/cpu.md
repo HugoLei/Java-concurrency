@@ -1,4 +1,5 @@
-![](/assets/cpu 缓存模型.jpg)
+![](/assets/cache.png)
+
 CPU 执行速度很快，主存的读写交换速度无法跟上 CPU，所以在 CPU 与主存之间加入了高速缓存（L1 Cache，L2 Cache，L3 Cache，性能逐渐降低，空间逐步加大，上级缓存放的是下级缓存的部分数据）。　
 # 基于 CPU 高速缓存的读写
 ## 缓存行
