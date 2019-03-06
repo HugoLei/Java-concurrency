@@ -6,7 +6,7 @@
 3. 把写缓冲区的所有数据刷新到内存中。
 
 # lock 指令 与 Volatile
-上述2和3，具有内存屏障的效果，足以同时实现 Volatile 读和 Volatile 写的语义
+上述2和3，具有内存屏障的效果，足以同时实现 Volatile 读和 Volatile 写的语义（Volatile 基于内存屏障实现）
 
 # lock 指令 与 CAS
 CAS 操作对应的指令是 lock cmpxch，是个 lock 前缀的指令
