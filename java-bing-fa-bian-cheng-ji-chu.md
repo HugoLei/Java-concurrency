@@ -44,4 +44,25 @@ Java的 Runnable 状态：包含 OS 的运行和就绪两种状态
 虚拟机退出时，Daemon线程立即终止，其finally块中的内容并不一定会执行，因此不能依靠 finally 块中的内容来确保执行关闭或清理资源的逻辑
 ```
 
+# 中断（相当于是发了个信号）
+中断相当于是线程的一个标识位属性。
+#### 触发中断
+其他线程调用该线程的 interrupt()方法，触发中断（相当于把标志位置为中断）
+#### 响应中断
+该线程通过isInterrupted()检查自身是否被中断
+#### 复位
+Thread.interrupted()对当前线程的中断标识进行复位
+#### InterruptedException
+Java API 中声名抛出InterruptedException异常的方法
+这些方法在抛出InterruptedException之前，JVM 会将线程的中断标识清除，然后抛出异常。
+> 例如 Thread.sleep(int)会抛出InterruptedException
 
+# suspend() resume() stop()的缺陷
+这些方法过期，不推荐使用。
+因为：
+suspend()暂停时，线程不会释放资源
+stop()终止线程时，也不保证线程资源正常释放
+
+# 如何优雅地终止线程
+1. 通过中断标识
+2. 共享boolean变量
