@@ -35,7 +35,7 @@ Java的 Runnable 状态：包含 OS 的运行和就绪两种状态
 ![](/assets/状态变化.JPG)
 * Thread.sleep(int) 进入TIMED_WAITING
 
-# Daemon 线程
+# Daemon 线程（finally块并不一定执行）
 1. Daemon 属性在线程启动之前设置
 2. 当 Java 虚拟机中不存在非 Daemon 线程时，虚拟机会退出，然后所有 Daemon 线程立即终止。
 
