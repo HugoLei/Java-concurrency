@@ -32,3 +32,4 @@ setPriority(int)方法修改优先级并不一定生效，
 # 线程状态
 Java的 Runnable 状态：包含 OS 的运行和就绪两种状态
 ![](/assets/线程状态.JPG)
+![](/assets/状态变化.JPG)
