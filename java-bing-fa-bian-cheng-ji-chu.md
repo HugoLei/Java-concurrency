@@ -76,6 +76,7 @@ stop()终止线程时，也不保证线程资源正常释放
 3. synchronized
 4. synchronized(对象) + 对象.wait / 对象.notify
 5. 管道输入/输出流
+6. join()
 
 #### synchronize + wait/notify 注意事项
 要调用obj.wait()，前提是当前线程必须要获取到 obj 的锁
@@ -86,5 +87,10 @@ stop()终止线程时，也不保证线程资源正常释放
 #### synchronized 和 synchronize + wait/notify 的区别
 ![](/assets/同步队列.JPG)
 ![](/assets/同步队列+等待队列.jpg)
+
+#### join
+线程 A调用 B.join()，意思是线程 A 会等待线程 B 终止后，才从 B.join()返回
+join()是个 synchronized 方法，原理和synchronized(对象) + 对象.wait / 对象.notify是一样的
+
 
 
