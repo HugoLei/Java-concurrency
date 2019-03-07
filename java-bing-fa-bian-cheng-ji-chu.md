@@ -63,7 +63,7 @@ Java API 中声名抛出InterruptedException异常的方法
 suspend()暂停时，线程不会释放资源
 stop()终止线程时，也不保证线程资源正常释放
 
-# 如何优雅地终止线程
+# 如何安全地终止线程
 1. 通过中断标识
 2. Volatile boolean共享变量
 
