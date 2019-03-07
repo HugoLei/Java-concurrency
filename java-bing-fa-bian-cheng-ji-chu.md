@@ -74,5 +74,5 @@ stop()终止线程时，也不保证线程资源正常释放
 1. 中断
 2. 共享变量
 3. synchronized
-4. synchronized + wait / notify
+4. synchronized(对象) + 对象.wait / 对象.notify
 5. 管道输入/输出流
