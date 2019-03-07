@@ -41,7 +41,7 @@ Java的 Runnable 状态：包含 OS 的运行和就绪两种状态
 
 
 ```
-Daemon线程的 finally块中的内容并不一定会执行
+虚拟机退出时，Daemon线程立即终止，其finally块中的内容并不一定会执行，因此不能依靠 finally 块中的内容来确保执行关闭或清理资源的逻辑
 ```
 
 
