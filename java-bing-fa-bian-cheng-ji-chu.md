@@ -84,6 +84,11 @@ stop()终止线程时，也不保证线程资源正常释放
 2. wait()方法后，线程由 Runnable 态变为 Waiting 态，同时释放对象的锁
 3. notify()之后，调用 wait()的线程并不是立即返回，它需要等调用notify()的线程释放了对象锁，并且它获取到了对象锁，然后它才能从 wait()方法返回
 
+#### synchronize + wait/notify 实现超时等待
+计算目标毫秒数
+条件不满足时，等待 waittime 时长
+其他逻辑
+
 #### synchronized 和 synchronize + wait/notify 的区别
 ![](/assets/同步队列.JPG)
 ![](/assets/同步队列+等待队列.jpg)
