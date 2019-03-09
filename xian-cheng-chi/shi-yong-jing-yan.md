@@ -31,3 +31,15 @@ IO 密集型：尽可能多，如2Ncpu（IO 型不是一直占着 CPU，因此�
 例如，DB 出问题了，导致连接池的线程都 hang 住，如果是无界队列，那就会无限增长，将内存撑爆。使用有界队列，可以增强稳定性和预警能力。
 
 # 线程池监控
+常见监控指标：
+1. taskCount: 需要执行的任务数量
+2. completedTaskCount：已完成的任务数（<=taskCount）
+3. largestPoolSize: 曾经创建过的最大线程数量（用来判断线程池是否曾经满过）
+4. getPoolSize: 当前线程数量
+5. getActiveCount: 活动线程数量
+
+扩展：
+重写beforeExecute()，afterExecute(),terminated()方法
+> 例如：统计线程执行时间
+beforeExecute()里记录任务开始时间，放在 ThreadLocal 里
+afterExecute()里获取任务结束时间，计算差值，计算平均运行时间，最大运行时间等
