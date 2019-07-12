@@ -1,5 +1,7 @@
-package com.cn.uncle.base.TestJava;
 
+
+```
+package com.cn.uncle.base.TestJava;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestThread {
@@ -53,3 +55,6 @@ public class TestThread {
         }
     }
 }
+
+```
+
