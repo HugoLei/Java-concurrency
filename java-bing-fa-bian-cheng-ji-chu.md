@@ -140,6 +140,7 @@ Float.floatToIntBits()可以把 float 转成 int
 Float.intBitsToFloat()可以把 int 转成 float
 Double 同理
 因此可以用 AtomicInteger 实现 float 和 double 的原子操作类
+
 #### 原子更新数组里的某个元素
 AtomicIntegerArray
 AtomicLongArray
