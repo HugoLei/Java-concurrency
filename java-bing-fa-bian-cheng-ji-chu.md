@@ -107,7 +107,7 @@ join()是个 synchronized 方法，原理和synchronized(对象) + 对象.wait /
 
 ```
 首先理清一个逻辑：首先我们写了一个任务（运行run()），然后把这个任务放在一个 Thread 上去执行。
-任务是任务，Thread 是 Thread
+任务是任务，Thread 是 Thread （任务运行在底层操作系统的线程上）
 ```
 
 
