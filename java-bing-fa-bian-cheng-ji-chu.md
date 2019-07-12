@@ -31,6 +31,8 @@ setPriority(int)方法修改优先级并不一定生效，
 * 对比不同优先级线程，计数结果
 * 发现不同优先级，计数结果并没有严格的大小关系，说明优先级没生效
 
+[](/java-bing-fa-bian-cheng-ji-chu/testpriority.md)
+
 # 线程状态
 Java的 Runnable 状态：包含 OS 的运行和就绪两种状态
 ![](/assets/线程状态.JPG)
