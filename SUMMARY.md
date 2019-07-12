@@ -5,6 +5,7 @@
 * [Introduction](README.md)
 * [Java常用命令介绍](javachang-yong-ming-ling-jie-shao.md)
 * [Java 并发编程基础](java-bing-fa-bian-cheng-ji-chu.md)
+  * [TestPriority](java-bing-fa-bian-cheng-ji-chu/testpriority.md)
 * [线程池](xian-cheng-chi.md)
   * [线程池模型](xian-cheng-chi/xian-cheng-chi-mo-xing.md)
   * [Executor框架](xian-cheng-chi/executorkuang-jia.md)
