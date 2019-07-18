@@ -53,12 +53,12 @@ public void put(E e) throws InterruptedException {
 ```
 
 
-### 同步的实现原理
+### 同步的实现原理（AQS）
 ReentrantLock
 
 ReentrantLock的实现参见[AbstractQueuedSynchronizer](/tong-bu-kuang-jia/abstractqueuedsynchronizer.md)
 
-### 阻塞的实现原理
+### 阻塞的实现原理（自旋+等待通知）
 
 > while 自旋 + 等待通知模式
 
