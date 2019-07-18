@@ -4,7 +4,7 @@
 
 Java7 提供的一个用于并行执行任务的框架，是一个把大任务分割成若干个小任务，最终汇总每个小任务结果后得到大任务结果的框架。
 
-跟Executors FurtureTask的关系？
+#### 跟Executors FurtureTask的关系？
 
 Fork：把大任务切分为若干子任务
 
