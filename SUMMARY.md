@@ -1,7 +1,6 @@
 # Summary
 
 * [1 项目笔记](xiang-mu-bi-ji.md)
-* [2 临时](xiang-mu-bi-ji/lin-shi.md)
 * [3 Introduction](README.md)
 * [4 Java 并发编程基础](java-bing-fa-bian-cheng-ji-chu.md)
   * [4.1 Java常用命令介绍](javachang-yong-ming-ling-jie-shao.md)
@@ -31,6 +30,7 @@
   * [class文件](classwen-jian.md)
   * [clinit与init](bian-yi/clinit4e0e3c-init.md)
   * [原子操作类](bian-yi/yuan-zi-cao-zuo-lei.md)
+  * [指令重排](xiang-mu-bi-ji/lin-shi.md)
 * [10 操作系统](cao-zuo-xi-tong.md)
   * [POSIX](cao-zuo-xi-tong/posix.md)
   * [用户态 & 内核态](cao-zuo-xi-tong/yong-hu-tai-and-nei-he-tai.md)

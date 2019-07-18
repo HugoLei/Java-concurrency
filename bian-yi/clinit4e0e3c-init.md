@@ -1,5 +1,3 @@
-# &lt;clinit&gt;与&lt;init&gt;
-
 这是由Java编译器自动生成的方法。
 
 # &lt;clinit&gt;
