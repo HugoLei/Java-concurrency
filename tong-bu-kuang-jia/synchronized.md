@@ -45,7 +45,7 @@ Java SE 1.6对 synchronized 进行了多种优化。
 ---
 
 # synchronized 与重量级锁
-> synchronized 重量级锁，依赖 OS 的 Mutex 实现。
+> synchronized 是重量级锁，依赖 OS 的 Mutex 实现。
 
 
 ## 逻辑推理
