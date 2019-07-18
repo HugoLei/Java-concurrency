@@ -91,7 +91,7 @@ Current thread:ForkJoinPool-1-worker-2compute: 225--300
 cost:7076919ns
 
 # ForkJoinTask# invokeAll()
-# 整个计算过程只用到了4个线程
+# 整个计算过程用到了4个线程
 # ForkJoinPool-1-worker-1也执行了部分计算任务，compute: 0--75
 # 因此此种方式的性能更好，cost:5002036 < cost:7076919
 Current thread:main
