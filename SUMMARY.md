@@ -28,7 +28,6 @@
   * [Java线程间通信](jvm/javaxian-cheng-jian-tong-xin.md)
   * [native](jvm/unsafe.md)
   * [class文件](classwen-jian.md)
-  * [clinit与init](bian-yi/clinit4e0e3c-init.md)
   * [原子操作类](bian-yi/yuan-zi-cao-zuo-lei.md)
   * [指令重排](xiang-mu-bi-ji/lin-shi.md)
 * [10 操作系统](cao-zuo-xi-tong.md)
