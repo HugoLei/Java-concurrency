@@ -66,7 +66,7 @@ public ForkJoinPool() {
     }
 ```
 
-运营环境：MacBook Pro，1 CPU，2物理内核，4逻辑内核
+运行环境：MacBook Pro，1 CPU，2物理内核，4逻辑内核
 
 ```
 # 分别调用fork()
