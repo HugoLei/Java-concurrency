@@ -1,6 +1,6 @@
+# TestPriority
 
-
-```
+```text
 package com.cn.uncle.base.TestJava;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -55,6 +55,5 @@ public class TestThread {
         }
     }
 }
-
 ```
 
